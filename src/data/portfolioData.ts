@@ -105,24 +105,72 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
 export const PROJECTS_DATA: ProjectItem[] = [
   {
     id: "proj-1",
-    title: "Elance Aggregator",
+    title: "Elant Learning",
+    category: "AI-DRIVEN Learning Platform",
     description:
-      "Aggregation platform for tutors and students with live classes and scheduling.",
-    technologies: ["Next.js", "Node.js", "MongoDB", "Socket.IO"],
+      "AI-driven learning platform for ACCA, CMA, and CA students with structured courses, live sessions, study materials, exams, forums, challenges, and real-time communication.",
+    technologies: [
+      "React",
+      "Next.js",
+      "Node.js",
+      "MongoDB",
+      "Redis",
+      "AWS",
+      "TPStream",
+      "Daily.co",
+    ],
   },
   {
     id: "proj-2",
-    title: "Elance Admin",
+    title: "Elance Connect",
+    category: "Academic Platform",
     description:
-      "Admin panel to manage users, tutors, subscriptions and platform analytics.",
-    technologies: ["React", "TypeScript", "MUI", "Redux"],
+      "Academic management and communication platform for students and parents, covering schedules, exams, mentor bookings, batch enrollment, progress tracking, and announcements.",
+    technologies: [
+      "Next.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "AWS",
+      "Vercel",
+    ],
   },
   {
     id: "proj-3",
-    title: "Elance Mobile (Tutor)",
+    title: "Elance Learning",
+    category: "Learning Platform",
     description:
-      "Mobile application for live sessions, content management and communication.",
-    technologies: ["React Native", "Redux", "Socket.IO"],
+      "Online learning platform for professional finance programs, providing video courses, study materials, announcements, and structured content management for administrators and faculty.",
+    technologies: [
+      "Next.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "AWS",
+      "TPStream",
+    ],
+  },
+  {
+    id: "proj-4",
+    title: "Elance Job Portal",
+    category: "Job Platform",
+    description:
+      "Job application platform that enables users to browse available opportunities, view job details, submit applications, and upload resumes through a streamlined recruitment workflow.",
+    technologies: [
+      "HTML5",
+      "Firebase",
+      "Firestore",
+      "Firebase Storage",
+      "Firebase Hosting",
+    ],
+  },
+  {
+    id: "proj-5",
+    title: "CMS Platform",
+    category: "CMS",
+    description:
+      "Full-stack content management platform for managing courses, blog posts, images, and contact submissions through a dedicated admin dashboard.",
+    technologies: ["Next.js", "Express.js", "MongoDB", "Vercel", "Render"],
   },
 ];
 
