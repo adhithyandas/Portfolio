@@ -181,7 +181,7 @@ export const Hero: React.FC = () => {
 
                       <td className="pl-4">
                         <span className="text-cyan-300">experience</span>:{" "}
-                        <span className="text-emerald-400">"1.5+ Years"</span>,
+                        <span className="text-emerald-400">"2+ Years"</span>,
                       </td>
                     </tr>
 

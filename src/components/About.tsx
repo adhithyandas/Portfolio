@@ -23,28 +23,99 @@ export const About: React.FC = () => {
         </div>
 
         {/* Two-Column Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:items-center items-start">
           {/* Left Column: Description & Narrative */}
           <div className="lg:col-span-7 space-y-6">
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#F8FAFC]">
               I build <span className="text-[#38BDF8]">clean, scalable</span>{" "}
-              solutions.
+              software.
             </h2>
 
             <div className="space-y-4 text-[#94A3B8] text-base leading-relaxed">
-              <p>{PERSONAL_INFO.aboutParagraph1}</p>
-              <p>{PERSONAL_INFO.aboutParagraph2}</p>
+              <p>
+                I'm a Full Stack Developer with{" "}
+                <span className="font-semibold text-[#F8FAFC]">
+                  2+ years of total development experience
+                </span>
+                , including{" "}
+                <span className="font-semibold text-[#F8FAFC]">
+                  1.5+ years of professional experience
+                </span>
+                , building modern web applications, backend systems, and
+                scalable software solutions.
+              </p>
+
+              <p>
+                My work covers the{" "}
+                <span className="font-semibold text-[#F8FAFC]">
+                  full software development lifecycle
+                </span>
+                , from requirements analysis and application/database design to
+                development, testing, deployment, and maintenance.
+              </p>
+
+              <p>
+                I build across frontend and backend systems, including
+                responsive interfaces,{" "}
+                <span className="font-semibold text-[#F8FAFC]">
+                  scalable APIs
+                </span>
+                , database-driven applications, authentication and
+                authorization,{" "}
+                <span className="font-semibold text-[#F8FAFC]">
+                  real-time communication
+                </span>
+                , and third-party integrations.
+              </p>
+
+              <p>
+                I've contributed to education platforms, academic applications,
+                content management systems, job platforms, and other business
+                applications, working across both application development and
+                backend infrastructure.
+              </p>
+
+              <p>
+                I have experience working with{" "}
+                <span className="font-semibold text-[#F8FAFC]">
+                  production environments
+                </span>
+                , cloud deployments, CI/CD workflows, debugging, code reviews,
+                QA collaboration, and Agile/Scrum development.
+              </p>
+
+              <p>
+                My focus is on{" "}
+                <span className="font-semibold text-[#F8FAFC]">
+                  clean architecture
+                </span>
+                , maintainable code,{" "}
+                <span className="font-semibold text-[#F8FAFC]">
+                  performance
+                </span>
+                , <span className="font-semibold text-[#F8FAFC]">security</span>
+                ,{" "}
+                <span className="font-semibold text-[#F8FAFC]">
+                  reliability
+                </span>
+                , and practical engineering solutions.
+              </p>
+
+              <p>
+                I enjoy working across the stack, from frontend experiences and
+                backend services to cloud infrastructure and deployment, while
+                continuously improving software quality and reliability.
+              </p>
 
               <p className="text-sm pt-2 text-[#94A3B8]">
-                Core technologies I work with every day include{" "}
+                <strong>Core Technologies:</strong>{" "}
                 <span className="text-[#F8FAFC] font-medium">React</span>,{" "}
                 <span className="text-[#F8FAFC] font-medium">Next.js</span>,{" "}
+                <span className="text-[#F8FAFC] font-medium">TypeScript</span>,{" "}
+                <span className="text-[#F8FAFC] font-medium">JavaScript</span>,{" "}
                 <span className="text-[#F8FAFC] font-medium">Node.js</span>,{" "}
-                <span className="text-[#F8FAFC] font-medium">Express</span>,{" "}
-                <span className="text-[#F8FAFC] font-medium">MongoDB</span>,{" "}
-                <span className="text-[#F8FAFC] font-medium">Redis</span>,{" "}
-                <span className="text-[#F8FAFC] font-medium">AWS</span>, and{" "}
-                <span className="text-[#F8FAFC] font-medium">Socket.IO</span>.
+                <span className="text-[#F8FAFC] font-medium">Express.js</span>,{" "}
+                <span className="text-[#F8FAFC] font-medium">MongoDB</span>
               </p>
             </div>
           </div>
@@ -65,6 +136,9 @@ export const About: React.FC = () => {
 
                   <div className="text-sm sm:text-base font-semibold text-[#F8FAFC] mt-0.5">
                     {PERSONAL_INFO.experienceYears}
+                  </div>
+                  <div className="text-xs text-[#94A3B8] mt-0.5">
+                    {PERSONAL_INFO.experienceProfessional}
                   </div>
                 </div>
               </div>

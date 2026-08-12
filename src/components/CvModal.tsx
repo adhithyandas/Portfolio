@@ -41,9 +41,9 @@ LinkedIn: ${PERSONAL_INFO.linkedinUrl} | GitHub: ${PERSONAL_INFO.githubUrl}
 
 SUMMARY
 -------------------------------------------------------------------
-Full Stack Developer with 1.5+ years of experience building scalable web
-applications and real-time experiences using modern technologies. Focused
-on clean code, performance, and exceptional user experience.
+Full Stack Developer with 2+ years of total experience (including 1.5+ years
+professional) building scalable web applications and real-time experiences
+using modern technologies. Focused on clean code and performance.
 
 EXPERIENCE
 -------------------------------------------------------------------
@@ -164,11 +164,11 @@ EDUCATION
             </h3>
 
             <p className="text-[#94A3B8] leading-relaxed">
-              Full Stack Developer with 1.5+ years of experience building
-              scalable web applications and real-time experiences using React,
-              Next.js, Node.js, Express, MongoDB, and Redis. Passionate about
-              clean code, performance optimization, and AWS cloud
-              infrastructure.
+              Full Stack Developer with 2+ years of total experience (including
+              1.5+ years professional) building scalable web applications and
+              real-time experiences using React, Next.js, Node.js, Express,
+              MongoDB, and Redis. Passionate about clean code, performance
+              optimization, and AWS cloud infrastructure.
             </p>
           </div>
 

@@ -13,16 +13,18 @@ export const PERSONAL_INFO = {
   eyebrow: "FULL STACK DEVELOPER",
   heroDescription:
     "I build scalable web applications and real-time experiences using modern technologies. Focused on clean code, performance and great user experience.",
-  aboutHeading: "I build clean, scalable solutions.",
+  aboutHeading: "I build clean, scalable software.",
   aboutParagraph1:
-    "I'm a Full Stack Developer with 1.5+ years of experience building web and mobile applications. I enjoy turning complex problems into simple, beautiful and intuitive solutions.",
-  aboutParagraph2: "I love clean code, system design and continuous learning.",
+    "I'm a Full Stack Developer with 2+ years of total development experience, including 1.5+ years of professional experience building web applications, backend systems, and real-time solutions.",
+  aboutParagraph2:
+    "I work across the full development lifecycle, from application and database design to development, testing, deployment, and maintenance. I'm focused on writing maintainable code, designing reliable systems, and solving complex engineering problems.",
   email: "adhithyandask@gmail.com",
   phone: "+91 7306291434",
   location: "Kerala, India",
   languages: "English, Malayalam",
-  degree: "B.Tech",
-  experienceYears: "2+ Years",
+  degree: "BCA",
+  experienceYears: "2+ Years Total",
+  experienceProfessional: "1.5+ Years Professional",
   githubUrl: "https://github.com/adhithyandas",
   linkedinUrl: "https://www.linkedin.com/in/adhithyan-das-k",
   xUrl: "https://x.com/adhithyandask",
