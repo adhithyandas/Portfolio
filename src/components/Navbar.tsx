@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Download, Menu, X, Code2 } from "lucide-react";
 import { NAV_LINKS, PERSONAL_INFO } from "../data/portfolioData";
+import logo from "../../assets/favicon/logo.svg";
 
 interface NavbarProps {
   onOpenCvModal: () => void;
@@ -69,8 +70,8 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCvModal }) => {
             className="flex items-center gap-3 group focus:outline-none"
             id="navbar-logo"
           >
-            <div className="w-10 h-10 rounded-lg bg-[#111827] border border-[#38BDF8]/40 flex items-center justify-center font-bold text-[#38BDF8] group-hover:border-[#38BDF8] group-hover:shadow-[0_0_15px_rgba(56,189,248,0.25)] transition-all duration-300">
-              {PERSONAL_INFO.initials}
+            <div className="w-10 h-10 flex items-center justify-center">
+              <img src={logo} alt="Logo" className="w-10 h-10 object-contain" />
             </div>
 
             <span className="font-semibold text-lg text-[#F8FAFC] tracking-tight group-hover:text-[#38BDF8] transition-colors">

@@ -18,17 +18,19 @@ export const PERSONAL_INFO = {
     "I'm a Full Stack Developer with 1.5+ years of experience building web and mobile applications. I enjoy turning complex problems into simple, beautiful and intuitive solutions.",
   aboutParagraph2: "I love clean code, system design and continuous learning.",
   email: "adhithyandask@gmail.com",
-  phone: "+91 1234567890",
+  phone: "+91 7306291434",
   location: "Kerala, India",
-  languages: "English, Malayalam, Hindi",
+  languages: "English, Malayalam",
   degree: "B.Tech",
-  experienceYears: "1.5+ Years",
+  experienceYears: "2+ Years",
   githubUrl: "https://github.com/adhithyandas",
-  linkedinUrl: "https://linkedin.com/in/adhithyan-das",
+  linkedinUrl: "https://www.linkedin.com/in/adhithyan-das-k",
+  xUrl: "https://x.com/adhithyandask",
+  whatsappUrl: "https://wa.me/917306291434",
 };
 
 export const HERO_STATS = [
-  { value: "1.5+", label: "Years Experience" },
+  { value: "2+", label: "Years Experience" },
   { value: "10+", label: "Projects" },
   { value: "Full Stack", label: "Developer" },
 ];
@@ -36,7 +38,7 @@ export const HERO_STATS = [
 export const CODE_SNIPPET = `const developer = {
   name: "Adhithyan Das K",
   role: "Full Stack Developer",
-  experience: "1.5+ Years",
+  experience: "2+ Years",
   focus: ["Clean Code", "Performance", "User Experience"],
   tech: {
     frontend: ["React", "Next.js", "TypeScript"],
@@ -50,13 +52,17 @@ export const CODE_SNIPPET = `const developer = {
 console.log(developer);`;
 
 export const ABOUT_INFO: InfoDetail[] = [
-  { label: "Experience", value: "1.5+ Years", iconName: "Briefcase" },
+  { label: "Experience", value: "2+ Years", iconName: "Briefcase" },
   { label: "Email", value: "adhithyandask@gmail.com", iconName: "Mail" },
-  { label: "Degree", value: "B.Tech", iconName: "GraduationCap" },
+  {
+    label: "Degree",
+    value: "Bachelor of Computer Application - BCA",
+    iconName: "GraduationCap",
+  },
   { label: "Location", value: "Kerala, India", iconName: "MapPin" },
   {
     label: "Languages",
-    value: "English, Malayalam, Hindi",
+    value: "English, Malayalam",
     iconName: "Languages",
   },
 ];
