@@ -1,15 +1,19 @@
-import React from 'react';
-import { SKILL_CATEGORIES } from '../data/portfolioData';
+import React from "react";
+import { SKILL_CATEGORIES } from "../data/portfolioData";
 
 export const Skills: React.FC = () => {
   return (
-    <section id="skills" className="py-20 bg-[#0B1120] relative border-t border-[#1E293B]/50">
+    <section
+      id="skills"
+      className="py-20 bg-[#0B1120] relative border-t border-[#1E293B]/50"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
         <div className="mb-12">
           <span className="text-xs font-semibold tracking-wider text-[#38BDF8] uppercase px-3 py-1 bg-[#38BDF8]/10 border border-[#38BDF8]/20 rounded-full">
             SKILLS
           </span>
+
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#F8FAFC] mt-4">
             Technologies I <span className="text-[#38BDF8]">Work With</span>
           </h2>
@@ -36,6 +40,7 @@ export const Skills: React.FC = () => {
                       className="text-sm text-[#F8FAFC]/90 font-medium hover:text-[#38BDF8] transition-colors flex items-center gap-2"
                     >
                       <span className="w-1.5 h-1.5 rounded-full bg-[#38BDF8]/60 inline-block" />
+
                       <span>{skill}</span>
                     </li>
                   ))}

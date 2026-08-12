@@ -1,87 +1,221 @@
-# Adhithyan Das K — Developer Portfolio
+# Adhithyan Das K — Portfolio
 
-My personal portfolio website showcasing my experience, projects, technical skills, and professional journey as a **Full Stack Developer**.
+Personal portfolio website of **Adhithyan Das K**, a **Full Stack Developer**, showcasing professional experience, featured projects, technical skills, and development expertise.
 
-## About
+## Overview
 
-This portfolio highlights my experience building modern web applications, backend services, real-time systems, and cloud-based solutions.
+This portfolio is built with React and TypeScript with a clean, modern developer-focused design.
 
-I work primarily with **React, Next.js, TypeScript, Node.js, Express, MongoDB, Redis, Socket.IO, and AWS**.
+It includes:
+
+- Professional introduction
+- About section
+- Work experience
+- Featured projects
+- Technical skills
+- Services / What I Do
+- Contact section
+- Responsive design
+- CV download / viewer
 
 ## Tech Stack
 
-* **Frontend:** React, Next.js, TypeScript, JavaScript, Tailwind CSS, Material UI
-* **Backend:** Node.js, Express.js, REST APIs, Socket.IO
-* **Database:** MongoDB, Mongoose, Redis, PostgreSQL
-* **Cloud:** AWS, EC2, S3, Lambda, IAM, CloudWatch
-* **DevOps:** Docker, GitHub Actions, Nginx
-* **Testing & Monitoring:** Vitest, React Testing Library, Sentry
-* **Tools:** Git, GitHub, Postman, Swagger / OpenAPI
+### Frontend
 
-## Portfolio Sections
+- React
+- TypeScript
+- HTML5
+- CSS3
 
-* About
-* Experience
-* Featured Projects
-* Skills & Technologies
-* What I Do
-* Contact
+### Development
 
-## Featured Work
+- Vite
+- Yarn
+- ESLint / TypeScript tooling
 
-The portfolio showcases professional projects and development experience across:
+### Tools
 
-* Full-stack web applications
-* Admin platforms
-* RESTful backend systems
-* Real-time communication
-* Live applications
-* Cloud-based applications
-* Authentication and authorization
-* Database-driven applications
-
-## Development
-
-```bash
-# Clone the repository
-git clone <repository-url>
-
-# Navigate to the project
-cd portfolio
-
-# Install dependencies
-yarn install
-
-# Start development server
-yarn run dev
-```
-
-The application will be available at:
-
-```text
-http://localhost:3000
-```
+- Git
+- GitHub
+- VS Code
 
 ## Project Structure
 
 ```text
 portfolio/
-├── app/
-├── components/
-├── data/
-├── lib/
-├── public/
-└── ...
+├── src/
+│   ├── components/
+│   │   ├── About.tsx
+│   │   ├── Contact.tsx
+│   │   ├── CvModal.tsx
+│   │   ├── Experience.tsx
+│   │   ├── FeaturedProjects.tsx
+│   │   ├── Footer.tsx
+│   │   ├── Hero.tsx
+│   │   ├── Navbar.tsx
+│   │   ├── Skills.tsx
+│   │   └── WhatDo.tsx
+│   │
+│   ├── data/
+│   │   └── portfolioData.ts
+│   │
+│   ├── App.tsx
+│   ├── index.css
+│   ├── main.tsx
+│   └── types.ts
+│
+├── .gitignore
+├── index.html
+├── metadata.json
+├── package.json
+├── README.md
+├── tsconfig.json
+├── vite.config.ts
+└── yarn.lock
 ```
+
+## Sections
+
+### Hero
+
+Introduces me as a Full Stack Developer with quick access to projects, contact information, social profiles, and CV.
+
+### About
+
+Provides a short professional introduction along with relevant background information.
+
+### Experience
+
+Highlights professional experience, responsibilities, and technologies used throughout my career.
+
+### Featured Projects
+
+Showcases selected projects with descriptions and the technologies used to build them.
+
+### Skills
+
+Organizes technical skills into categories such as frontend, backend, databases, cloud, DevOps, testing, and development tools.
+
+### What I Do
+
+Highlights the areas I work in, including:
+
+- Web Development
+- Backend Development
+- Real-time Applications
+- Cloud & DevOps
+
+### Contact
+
+Provides a simple way to get in touch through email and professional social profiles.
+
+## Installation
+
+Clone the repository:
+
+```bash
+git clone <your-repository-url>
+```
+
+Navigate to the project:
+
+```bash
+cd portfolio
+```
+
+Install dependencies:
+
+```bash
+yarn install
+```
+
+Or:
+
+```bash
+npm install
+```
+
+## Development
+
+Start the development server:
+
+```bash
+yarn dev
+```
+
+Or:
+
+```bash
+npm run dev
+```
+
+The application will be available at:
+
+```text
+http://localhost:5173
+```
+
+## Production Build
+
+Create a production build:
+
+```bash
+yarn build
+```
+
+Or:
+
+```bash
+npm run build
+```
+
+Preview the production build locally:
+
+```bash
+yarn preview
+```
+
+## Customization
+
+Portfolio content is primarily managed through:
+
+```text
+src/data/portfolioData.ts
+```
+
+Update this file to modify information such as:
+
+- Personal details
+- Experience
+- Projects
+- Skills
+- Social links
+- Contact information
+
+Reusable UI sections are located inside:
+
+```text
+src/components/
+```
+
+## Deployment
+
+The project can be deployed to modern static hosting platforms such as:
+
+- Vercel
+- Netlify
+- GitHub Pages
+- Cloudflare Pages
 
 ## Contact
 
-**Adhithyan Das**
+**Adhithyan Das K**
+Full Stack Developer
 
-* LinkedIn — www.linkedin.com/in/adhithyan-das-k
-* GitHub — https://github.com/adhithyandas
-* Email — adhithyandask@gmail.com
+- GitHub: [Add GitHub URL]
+- LinkedIn: [Add LinkedIn URL]
+- Email: [Add Professional Email]
 
 ---
 
-© 2026 Adhithyan Das K
+© 2026 Adhithyan Das K. All rights reserved.

@@ -1,14 +1,14 @@
-import React, { useState } from 'react';
-import { Navbar } from './components/Navbar';
-import { Hero } from './components/Hero';
-import { About } from './components/About';
-import { Experience } from './components/Experience';
-import { FeaturedProjects } from './components/FeaturedProjects';
-import { Skills } from './components/Skills';
-import { WhatIDo } from './components/WhatIDo';
-import { Contact } from './components/Contact';
-import { Footer } from './components/Footer';
-import { CvModal } from './components/CvModal';
+import React, { useState } from "react";
+import { Navbar } from "./components/Navbar";
+import { Hero } from "./components/Hero";
+import { About } from "./components/About";
+import { Experience } from "./components/Experience";
+import { FeaturedProjects } from "./components/FeaturedProjects";
+import { Skills } from "./components/Skills";
+import { WhatIDo } from "./components/WhatIDo";
+import { Contact } from "./components/Contact";
+import { Footer } from "./components/Footer";
+import { CvModal } from "./components/CvModal";
 
 export default function App() {
   const [isCvModalOpen, setIsCvModalOpen] = useState(false);
@@ -46,10 +46,7 @@ export default function App() {
       <Footer />
 
       {/* Resume Modal */}
-      <CvModal
-        isOpen={isCvModalOpen}
-        onClose={() => setIsCvModalOpen(false)}
-      />
+      <CvModal isOpen={isCvModalOpen} onClose={() => setIsCvModalOpen(false)} />
     </div>
   );
 }

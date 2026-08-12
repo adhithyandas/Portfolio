@@ -1,13 +1,21 @@
-import { ExperienceItem, ProjectItem, SkillCategory, ServiceItem, InfoDetail } from '../types';
+import {
+  ExperienceItem,
+  ProjectItem,
+  SkillCategory,
+  ServiceItem,
+  InfoDetail,
+} from "../types";
 
 export const PERSONAL_INFO = {
-  name: "Adhithyan Das",
+  name: "Adhithyan Das K",
   initials: "AD",
   title: "Full Stack Developer",
   eyebrow: "FULL STACK DEVELOPER",
-  heroDescription: "I build scalable web applications and real-time experiences using modern technologies. Focused on clean code, performance and great user experience.",
+  heroDescription:
+    "I build scalable web applications and real-time experiences using modern technologies. Focused on clean code, performance and great user experience.",
   aboutHeading: "I build clean, scalable solutions.",
-  aboutParagraph1: "I'm a Full Stack Developer with 1.5+ years of experience building web and mobile applications. I enjoy turning complex problems into simple, beautiful and intuitive solutions.",
+  aboutParagraph1:
+    "I'm a Full Stack Developer with 1.5+ years of experience building web and mobile applications. I enjoy turning complex problems into simple, beautiful and intuitive solutions.",
   aboutParagraph2: "I love clean code, system design and continuous learning.",
   email: "adhithyandask@gmail.com",
   phone: "+91 1234567890",
@@ -26,7 +34,7 @@ export const HERO_STATS = [
 ];
 
 export const CODE_SNIPPET = `const developer = {
-  name: "Adhithyan Das",
+  name: "Adhithyan Das K",
   role: "Full Stack Developer",
   experience: "1.5+ Years",
   focus: ["Clean Code", "Performance", "User Experience"],
@@ -46,7 +54,11 @@ export const ABOUT_INFO: InfoDetail[] = [
   { label: "Email", value: "adhithyandask@gmail.com", iconName: "Mail" },
   { label: "Degree", value: "B.Tech", iconName: "GraduationCap" },
   { label: "Location", value: "Kerala, India", iconName: "MapPin" },
-  { label: "Languages", value: "English, Malayalam, Hindi", iconName: "Languages" },
+  {
+    label: "Languages",
+    value: "English, Malayalam, Hindi",
+    iconName: "Languages",
+  },
 ];
 
 export const EXPERIENCE_DATA: ExperienceItem[] = [
@@ -59,9 +71,17 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
       "Building scalable admin panels and APIs for a global edtech platform.",
       "Implemented real-time features using Socket.IO and Redis.",
       "Integrated AWS services including S3, EC2 and CloudWatch.",
-      "Working with React, Next.js, Node.js, MongoDB and related technologies."
+      "Working with React, Next.js, Node.js, MongoDB and related technologies.",
     ],
-    technologies: ["Next.js", "Node.js", "MongoDB", "Redis", "AWS", "Socket.IO", "Docker"]
+    technologies: [
+      "Next.js",
+      "Node.js",
+      "MongoDB",
+      "Redis",
+      "AWS",
+      "Socket.IO",
+      "Docker",
+    ],
   },
   {
     id: "exp-2",
@@ -70,31 +90,34 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     duration: "May 2024 – Dec 2024",
     highlights: [
       "Developed features and REST APIs using Node.js and Express.",
-      "Worked on React components and optimized application performance."
+      "Worked on React components and optimized application performance.",
     ],
-    technologies: ["React", "Node.js", "Express", "MongoDB", "Git", "AWS"]
-  }
+    technologies: ["React", "Node.js", "Express", "MongoDB", "Git", "AWS"],
+  },
 ];
 
 export const PROJECTS_DATA: ProjectItem[] = [
   {
     id: "proj-1",
     title: "Elance Aggregator",
-    description: "Aggregation platform for tutors and students with live classes and scheduling.",
-    technologies: ["Next.js", "Node.js", "MongoDB", "Socket.IO"]
+    description:
+      "Aggregation platform for tutors and students with live classes and scheduling.",
+    technologies: ["Next.js", "Node.js", "MongoDB", "Socket.IO"],
   },
   {
     id: "proj-2",
     title: "Elance Admin",
-    description: "Admin panel to manage users, tutors, subscriptions and platform analytics.",
-    technologies: ["React", "TypeScript", "MUI", "Redux"]
+    description:
+      "Admin panel to manage users, tutors, subscriptions and platform analytics.",
+    technologies: ["React", "TypeScript", "MUI", "Redux"],
   },
   {
     id: "proj-3",
     title: "Elance Mobile (Tutor)",
-    description: "Mobile application for live sessions, content management and communication.",
-    technologies: ["React Native", "Redux", "Socket.IO"]
-  }
+    description:
+      "Mobile application for live sessions, content management and communication.",
+    technologies: ["React Native", "Redux", "Socket.IO"],
+  },
 ];
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
@@ -107,8 +130,8 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       "JavaScript (ES6+)",
       "HTML5",
       "CSS / Tailwind CSS",
-      "Material UI"
-    ]
+      "Material UI",
+    ],
   },
   {
     category: "Backend",
@@ -118,17 +141,12 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       "RESTful APIs",
       "Socket.IO",
       "JWT Authentication",
-      "Serverless (AWS Lambda)"
-    ]
+      "Serverless (AWS Lambda)",
+    ],
   },
   {
     category: "Database",
-    skills: [
-      "MongoDB",
-      "Mongoose",
-      "Redis",
-      "PostgreSQL (Prisma)"
-    ]
+    skills: ["MongoDB", "Mongoose", "Redis", "PostgreSQL (Prisma)"],
   },
   {
     category: "Cloud & DevOps",
@@ -138,8 +156,8 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       "API Gateway",
       "Docker",
       "GitHub Actions",
-      "Nginx"
-    ]
+      "Nginx",
+    ],
   },
   {
     category: "Tools & Others",
@@ -149,36 +167,40 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
       "Jest / Vitest",
       "React Testing Library",
       "Sentry",
-      "VS Code"
-    ]
-  }
+      "VS Code",
+    ],
+  },
 ];
 
 export const SERVICES_DATA: ServiceItem[] = [
   {
     id: "serv-1",
     title: "Web Development",
-    description: "Building responsive, accessible and high-performance web applications using modern technologies.",
-    iconName: "Code"
+    description:
+      "Building responsive, accessible and high-performance web applications using modern technologies.",
+    iconName: "Code",
   },
   {
     id: "serv-2",
     title: "Backend Development",
-    description: "Designing scalable APIs and reliable server-side systems with clean architecture.",
-    iconName: "Server"
+    description:
+      "Designing scalable APIs and reliable server-side systems with clean architecture.",
+    iconName: "Server",
   },
   {
     id: "serv-3",
     title: "Real-time Solutions",
-    description: "Implementing real-time features such as chat, live sessions and notifications.",
-    iconName: "Zap"
+    description:
+      "Implementing real-time features such as chat, live sessions and notifications.",
+    iconName: "Zap",
   },
   {
     id: "serv-4",
     title: "Cloud & DevOps",
-    description: "Deploying, monitoring and scaling applications using AWS and CI/CD best practices.",
-    iconName: "Cloud"
-  }
+    description:
+      "Deploying, monitoring and scaling applications using AWS and CI/CD best practices.",
+    iconName: "Cloud",
+  },
 ];
 
 export const NAV_LINKS = [

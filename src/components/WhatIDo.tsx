@@ -1,17 +1,17 @@
-import React from 'react';
-import { Code2, Server, Zap, Cloud } from 'lucide-react';
-import { SERVICES_DATA } from '../data/portfolioData';
+import React from "react";
+import { Code2, Server, Zap, Cloud } from "lucide-react";
+import { SERVICES_DATA } from "../data/portfolioData";
 
 export const WhatIDo: React.FC = () => {
   const getServiceIcon = (iconName: string) => {
     switch (iconName) {
-      case 'Code':
+      case "Code":
         return <Code2 className="w-8 h-8 text-[#38BDF8]" />;
-      case 'Server':
+      case "Server":
         return <Server className="w-8 h-8 text-[#38BDF8]" />;
-      case 'Zap':
+      case "Zap":
         return <Zap className="w-8 h-8 text-[#38BDF8]" />;
-      case 'Cloud':
+      case "Cloud":
         return <Cloud className="w-8 h-8 text-[#38BDF8]" />;
       default:
         return <Code2 className="w-8 h-8 text-[#38BDF8]" />;
@@ -19,13 +19,17 @@ export const WhatIDo: React.FC = () => {
   };
 
   return (
-    <section id="what-i-do" className="py-20 bg-[#0B1120] relative border-t border-[#1E293B]/50">
+    <section
+      id="what-i-do"
+      className="py-20 bg-[#0B1120] relative border-t border-[#1E293B]/50"
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Eyebrow & Title */}
         <div className="mb-12">
           <span className="text-xs font-semibold tracking-wider text-[#38BDF8] uppercase px-3 py-1 bg-[#38BDF8]/10 border border-[#38BDF8]/20 rounded-full">
             WHAT I DO
           </span>
+
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#F8FAFC] mt-4">
             What I Do
           </h2>
