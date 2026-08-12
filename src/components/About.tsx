@@ -101,12 +101,6 @@ export const About: React.FC = () => {
                 , and practical engineering solutions.
               </p>
 
-              <p>
-                I enjoy working across the stack, from frontend experiences and
-                backend services to cloud infrastructure and deployment, while
-                continuously improving software quality and reliability.
-              </p>
-
               <p className="text-sm pt-2 text-[#94A3B8]">
                 <strong>Core Technologies:</strong>{" "}
                 <span className="text-[#F8FAFC] font-medium">React</span>,{" "}

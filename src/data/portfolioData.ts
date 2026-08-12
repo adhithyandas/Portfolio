@@ -12,7 +12,7 @@ export const PERSONAL_INFO = {
   title: "Full Stack Developer",
   eyebrow: "FULL STACK DEVELOPER",
   heroDescription:
-    "I build scalable web applications and real-time experiences using modern technologies. Focused on clean code, performance and great user experience.",
+    "I build scalable web applications and reliable backend systems for modern digital products. I work across the stack to turn requirements into production-ready software, with a focus on clean architecture, performance, security, and maintainability.",
   aboutHeading: "I build clean, scalable software.",
   aboutParagraph1:
     "I'm a Full Stack Developer with 2+ years of total development experience, including 1.5+ years of professional experience building web applications, backend systems, and real-time solutions.",
@@ -32,16 +32,16 @@ export const PERSONAL_INFO = {
 };
 
 export const HERO_STATS = [
-  { value: "2+", label: "Years Experience" },
+  { value: "2+", label: "Total Experience" },
   { value: "10+", label: "Projects" },
-  { value: "Full Stack", label: "Developer" },
+  { value: "E2E", label: "Development" },
 ];
 
 export const CODE_SNIPPET = `const developer = {
   name: "Adhithyan Das K",
   role: "Full Stack Developer",
   experience: "2+ Years",
-  focus: ["Clean Code", "Performance", "User Experience"],
+  focus: ["Clean Architecture", "Performance", "Security"],
   tech: {
     frontend: ["React", "Next.js", "TypeScript"],
     backend: ["Node.js", "Express"],
