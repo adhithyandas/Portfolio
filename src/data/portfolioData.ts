@@ -181,31 +181,45 @@ export const SKILL_CATEGORIES: SkillCategory[] = [
 export const SERVICES_DATA: ServiceItem[] = [
   {
     id: "serv-1",
-    title: "Web Development",
+    title: "Full Stack Development",
     description:
-      "Building responsive, accessible and high-performance web applications using modern technologies.",
+      "Designing and developing scalable web applications across frontend and backend systems. Building responsive interfaces, reliable APIs, authentication flows, and data-driven features. Focused on maintainable code and consistent application architecture.",
     iconName: "Code",
   },
   {
     id: "serv-2",
-    title: "Backend Development",
+    title: "Architecture & System Design",
     description:
-      "Designing scalable APIs and reliable server-side systems with clean architecture.",
+      "Designing application architecture, service boundaries, APIs, data flows, and integrations. Applying system design principles for scalability, reliability, maintainability, and extensibility. Choosing practical technologies and patterns for production systems.",
     iconName: "Server",
   },
   {
     id: "serv-3",
-    title: "Real-time Solutions",
+    title: "Security & Reliability",
     description:
-      "Implementing real-time features such as chat, live sessions and notifications.",
+      "Implementing secure authentication, authorization, validation, and protected application flows. Applying secure coding practices, error handling, logging, and dependency management. Focused on building reliable systems with production-ready safeguards.",
     iconName: "Zap",
   },
   {
     id: "serv-4",
-    title: "Cloud & DevOps",
+    title: "Performance & Scalability",
     description:
-      "Deploying, monitoring and scaling applications using AWS and CI/CD best practices.",
+      "Optimizing frontend performance, APIs, database operations, caching, and application workflows. Designing systems that can scale with increasing users, traffic, and data volume. Focused on efficient resource usage, responsiveness, and reliable performance.",
     iconName: "Cloud",
+  },
+  {
+    id: "serv-5",
+    title: "Integrations & Distributed Systems",
+    description:
+      "Integrating third-party services, external APIs, cloud services, and real-time communication systems. Working with asynchronous workflows, event-driven features, queues, and service integrations. Building dependable connections between internal and external systems.",
+    iconName: "Database",
+  },
+  {
+    id: "serv-6",
+    title: "Code Quality, Testing & AI",
+    description:
+      "Writing clean, modular, testable code with consistent engineering and development practices. Using automated testing, code reviews, observability, and debugging to improve software quality. Leveraging AI tools responsibly to accelerate development, problem-solving, and engineering workflows.",
+    iconName: "Activity",
   },
 ];
 
@@ -215,6 +229,6 @@ export const NAV_LINKS = [
   { name: "Experience", href: "#experience" },
   { name: "Projects", href: "#projects" },
   { name: "Skills", href: "#skills" },
-  { name: "What I Do", href: "#what-i-do" },
+  { name: "Expertise", href: "#expertise" },
   { name: "Contact", href: "#contact" },
 ];

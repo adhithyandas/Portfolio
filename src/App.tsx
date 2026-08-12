@@ -5,7 +5,7 @@ import { About } from "./components/About";
 import { Experience } from "./components/Experience";
 import { FeaturedProjects } from "./components/FeaturedProjects";
 import { Skills } from "./components/Skills";
-import { WhatIDo } from "./components/WhatIDo";
+import { CoreExpertise } from "./components/CoreExpertise";
 import { Contact } from "./components/Contact";
 import { Footer } from "./components/Footer";
 import { CvModal } from "./components/CvModal";
@@ -35,8 +35,8 @@ export default function App() {
         {/* 6. Skills / Tech Stack */}
         <Skills />
 
-        {/* 7. What I Do */}
-        <WhatIDo />
+        {/* 7. Core Expertise */}
+        <CoreExpertise />
 
         {/* 8. Contact */}
         <Contact />
