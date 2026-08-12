@@ -144,7 +144,7 @@ export const Footer: React.FC = () => {
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between text-xs text-[#94A3B8] gap-4">
-          <div>© {currentYear} Adhithyan Das. All rights reserved.</div>
+          <div>© {currentYear} Adhithyan Das K. All rights reserved.</div>
 
           <div className="text-xs text-[#94A3B8]/80">
             Kerala, India • Full Stack Developer

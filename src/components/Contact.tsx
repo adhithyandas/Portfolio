@@ -1,13 +1,13 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import {
   Send,
   Mail,
-  Phone,
   Linkedin,
   Github,
   MapPin,
   CheckCircle2,
 } from "lucide-react";
+import { useForm, ValidationError } from "@formspree/react";
 import { PERSONAL_INFO } from "../data/portfolioData";
 
 export const Contact: React.FC = () => {
@@ -17,20 +17,16 @@ export const Contact: React.FC = () => {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
-  const [loading, setLoading] = useState(false);
+  const [state, handleFormspreeSubmit] = useForm("mqpzbkkj");
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formData.name || !formData.email || !formData.message) return;
-
-    setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
+  useEffect(() => {
+    if (state.succeeded) {
       setSubmitted(true);
       setFormData({ name: "", email: "", message: "" });
-      setTimeout(() => setSubmitted(false), 5000);
-    }, 800);
-  };
+      const timer = setTimeout(() => setSubmitted(false), 5000);
+      return () => clearTimeout(timer);
+    }
+  }, [state.succeeded]);
 
   return (
     <section
@@ -49,13 +45,14 @@ export const Contact: React.FC = () => {
           </h2>
 
           <p className="text-[#94A3B8] text-base mt-2">
-            Have a project in mind or want to say hi? Feel free to reach out.
+            Have a project or opportunity in mind? Let's connect and discuss how
+            we can work together.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
           {/* Left: Contact Form */}
-          <div className="lg:col-span-7 bg-[#111827] border border-[#1E293B] rounded-xl p-6 sm:p-8 shadow-xl">
+          <div className="lg:col-span-7 bg-[#111827] border border-[#1E293B] rounded-xl p-6 sm:p-8 shadow-xl flex flex-col">
             {submitted ? (
               <div className="p-6 bg-[#0B1120] border border-[#38BDF8]/50 rounded-lg text-center space-y-3">
                 <CheckCircle2 className="w-12 h-12 text-[#38BDF8] mx-auto animate-bounce" />
@@ -69,7 +66,10 @@ export const Contact: React.FC = () => {
                 </p>
               </div>
             ) : (
-              <form onSubmit={handleSubmit} className="space-y-5">
+              <form
+                onSubmit={handleFormspreeSubmit}
+                className="space-y-5 flex-1 flex flex-col"
+              >
                 <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                   <div>
                     <label
@@ -82,13 +82,21 @@ export const Contact: React.FC = () => {
                     <input
                       type="text"
                       id="contact-name"
+                      name="name"
                       required
                       value={formData.name}
                       onChange={(e) =>
                         setFormData({ ...formData, name: e.target.value })
                       }
-                      placeholder="John Doe"
+                      placeholder="Alex Morgan"
                       className="w-full px-4 py-3 bg-[#0B1120] border border-[#1E293B] rounded-lg text-[#F8FAFC] placeholder-[#94A3B8]/50 focus:outline-none focus:border-[#38BDF8] focus:ring-1 focus:ring-[#38BDF8] transition-colors text-sm"
+                    />
+
+                    <ValidationError
+                      prefix="Name"
+                      field="name"
+                      errors={state.errors}
+                      className="text-xs text-red-500 mt-1 block"
                     />
                   </div>
 
@@ -103,18 +111,26 @@ export const Contact: React.FC = () => {
                     <input
                       type="email"
                       id="contact-email"
+                      name="email"
                       required
                       value={formData.email}
                       onChange={(e) =>
                         setFormData({ ...formData, email: e.target.value })
                       }
-                      placeholder="john@example.com"
+                      placeholder="alex.morgan@example.com"
                       className="w-full px-4 py-3 bg-[#0B1120] border border-[#1E293B] rounded-lg text-[#F8FAFC] placeholder-[#94A3B8]/50 focus:outline-none focus:border-[#38BDF8] focus:ring-1 focus:ring-[#38BDF8] transition-colors text-sm"
+                    />
+
+                    <ValidationError
+                      prefix="Email"
+                      field="email"
+                      errors={state.errors}
+                      className="text-xs text-red-500 mt-1 block"
                     />
                   </div>
                 </div>
 
-                <div>
+                <div className="flex-1 flex flex-col">
                   <label
                     htmlFor="contact-message"
                     className="block text-xs font-semibold text-[#94A3B8] mb-2 uppercase tracking-wider"
@@ -124,24 +140,32 @@ export const Contact: React.FC = () => {
 
                   <textarea
                     id="contact-message"
+                    name="message"
                     required
-                    rows={5}
+                    rows={8}
                     value={formData.message}
                     onChange={(e) =>
                       setFormData({ ...formData, message: e.target.value })
                     }
                     placeholder="Tell me about your project or opportunity..."
-                    className="w-full px-4 py-3 bg-[#0B1120] border border-[#1E293B] rounded-lg text-[#F8FAFC] placeholder-[#94A3B8]/50 focus:outline-none focus:border-[#38BDF8] focus:ring-1 focus:ring-[#38BDF8] transition-colors text-sm resize-none"
+                    className="w-full px-4 py-3 bg-[#0B1120] border border-[#1E293B] rounded-lg text-[#F8FAFC] placeholder-[#94A3B8]/50 focus:outline-none focus:border-[#38BDF8] focus:ring-1 focus:ring-[#38BDF8] transition-colors text-sm resize-none flex-1 min-h-37.5"
+                  />
+
+                  <ValidationError
+                    prefix="Message"
+                    field="message"
+                    errors={state.errors}
+                    className="text-xs text-red-500 mt-1 block"
                   />
                 </div>
 
                 <button
                   type="submit"
-                  disabled={loading}
+                  disabled={state.submitting}
                   id="send-message-btn"
                   className="w-full inline-flex items-center justify-center gap-2 px-6 py-3.5 text-sm font-semibold rounded-lg text-[#0B1120] bg-[#38BDF8] hover:bg-[#0EA5E9] disabled:opacity-50 transition-all duration-300 shadow-lg shadow-[#38BDF8]/20 cursor-pointer group"
                 >
-                  {loading ? (
+                  {state.submitting ? (
                     <span>Sending...</span>
                   ) : (
                     <>
@@ -181,22 +205,33 @@ export const Contact: React.FC = () => {
                 </div>
               </a>
 
-              {/* Phone */}
-              <div className="flex items-center gap-4 p-2">
-                <div className="p-3 rounded-lg bg-[#0B1120] border border-[#1E293B] text-[#38BDF8]">
-                  <Phone className="w-5 h-5" />
+              {/* WhatsApp */}
+              <a
+                href={PERSONAL_INFO.whatsappUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 group p-2 rounded-lg hover:bg-[#0B1120] transition-colors"
+              >
+                <div className="p-3 rounded-lg bg-[#0B1120] border border-[#1E293B] text-[#38BDF8] group-hover:border-[#38BDF8]">
+                  <svg
+                    className="w-5 h-5"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L0 24l6.335-1.662c1.746.953 3.71 1.458 5.704 1.459h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z" />
+                  </svg>
                 </div>
 
                 <div>
                   <div className="text-xs text-[#94A3B8] font-medium uppercase tracking-wider">
-                    Phone
+                    WhatsApp
                   </div>
 
-                  <div className="text-sm font-semibold text-[#F8FAFC]">
+                  <div className="text-sm font-semibold text-[#F8FAFC] group-hover:text-[#38BDF8] transition-colors">
                     {PERSONAL_INFO.phone}
                   </div>
                 </div>
-              </div>
+              </a>
 
               {/* LinkedIn */}
               <a
@@ -238,6 +273,34 @@ export const Contact: React.FC = () => {
 
                   <div className="text-sm font-semibold text-[#F8FAFC] group-hover:text-[#38BDF8] transition-colors">
                     github.com/adhithyandas
+                  </div>
+                </div>
+              </a>
+
+              {/* X */}
+              <a
+                href={PERSONAL_INFO.xUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-4 group p-2 rounded-lg hover:bg-[#0B1120] transition-colors"
+              >
+                <div className="p-3 rounded-lg bg-[#0B1120] border border-[#1E293B] text-[#38BDF8] group-hover:border-[#38BDF8]">
+                  <svg
+                    className="w-5 h-5"
+                    viewBox="0 0 24 24"
+                    fill="currentColor"
+                  >
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+                  </svg>
+                </div>
+
+                <div>
+                  <div className="text-xs text-[#94A3B8] font-medium uppercase tracking-wider">
+                    X (Twitter)
+                  </div>
+
+                  <div className="text-sm font-semibold text-[#F8FAFC] group-hover:text-[#38BDF8] transition-colors">
+                    x.com/adhithyandask
                   </div>
                 </div>
               </a>
