@@ -11,7 +11,7 @@ export const Skills: React.FC = () => {
         {/* Section Header */}
         <div className="mb-12">
           <span className="text-xs font-semibold tracking-wider text-[#38BDF8] uppercase px-3 py-1 bg-[#38BDF8]/10 border border-[#38BDF8]/20 rounded-full">
-            TECHNICAL SKILLS
+            SKILLS
           </span>
 
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#F8FAFC] mt-4">
