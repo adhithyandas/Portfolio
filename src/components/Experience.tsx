@@ -15,7 +15,7 @@ export const Experience: React.FC = () => {
           </span>
 
           <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#F8FAFC] mt-4">
-            My Experience
+            Professional Experience
           </h2>
         </div>
 
