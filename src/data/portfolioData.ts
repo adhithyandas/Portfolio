@@ -147,12 +147,11 @@ export const PROJECTS_DATA: ProjectItem[] = [
     technologies: [
       "React",
       "Next.js",
+      "Go",
       "Node.js",
+      "Express.js",
       "MongoDB",
-      "Redis",
       "AWS",
-      "TPStream",
-      "Daily.co",
     ],
   },
   {
@@ -161,14 +160,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
     category: "Academic Platform",
     description:
       "Academic management and communication platform for students and parents, covering schedules, exams, mentor bookings, batch enrollment, progress tracking, and announcements.",
-    technologies: [
-      "Next.js",
-      "Node.js",
-      "Express.js",
-      "MongoDB",
-      "AWS",
-      "Vercel",
-    ],
+    technologies: ["Next.js", "Node.js", "Fastify", "MongoDB", "AWS", "Vercel"],
   },
   {
     id: "proj-3",
