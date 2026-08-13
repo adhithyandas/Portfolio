@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { AnimatePresence } from "motion/react";
 import { Navbar } from "./components/Navbar";
 import { Hero } from "./components/Hero";
 import { About } from "./components/About";
@@ -46,7 +47,9 @@ export default function App() {
       <Footer />
 
       {/* Resume Modal */}
-      <CvModal isOpen={isCvModalOpen} onClose={() => setIsCvModalOpen(false)} />
+      <AnimatePresence>
+        {isCvModalOpen && <CvModal onClose={() => setIsCvModalOpen(false)} />}
+      </AnimatePresence>
     </div>
   );
 }

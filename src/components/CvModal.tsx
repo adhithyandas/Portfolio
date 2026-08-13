@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react";
 import { X, Download, Printer, Mail, Phone, MapPin } from "lucide-react";
 import {
   PERSONAL_INFO,
@@ -8,13 +9,10 @@ import {
 } from "../data/portfolioData";
 
 interface CvModalProps {
-  isOpen: boolean;
   onClose: () => void;
 }
 
-export const CvModal: React.FC<CvModalProps> = ({ isOpen, onClose }) => {
-  if (!isOpen) return null;
-
+export const CvModal: React.FC<CvModalProps> = ({ onClose }) => {
   const handlePrint = () => {
     window.print();
   };
@@ -76,8 +74,19 @@ EDUCATION
   };
 
   return (
-    <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm animate-in fade-in duration-200">
-      <div
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      transition={{ duration: 0.2 }}
+      className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/80 backdrop-blur-sm"
+      onClick={onClose}
+    >
+      <motion.div
+        initial={{ opacity: 0, scale: 0.95, y: 15 }}
+        animate={{ opacity: 1, scale: 1, y: 0 }}
+        exit={{ opacity: 0, scale: 0.95, y: 15 }}
+        transition={{ type: "spring", duration: 0.3, bounce: 0.15 }}
         className="bg-[#111827] border border-[#1E293B] rounded-xl max-w-3xl w-full max-h-[90vh] flex flex-col shadow-2xl overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
@@ -248,7 +257,7 @@ EDUCATION
             </div>
           </div>
         </div>
-      </div>
-    </div>
+      </motion.div>
+    </motion.div>
   );
 };
