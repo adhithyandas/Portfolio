@@ -1,15 +1,5 @@
 import React from "react";
-import {
-  X,
-  Download,
-  Printer,
-  Briefcase,
-  GraduationCap,
-  Mail,
-  Phone,
-  MapPin,
-  Globe,
-} from "lucide-react";
+import { X, Download, Printer, Mail, Phone, MapPin } from "lucide-react";
 import {
   PERSONAL_INFO,
   EXPERIENCE_DATA,
@@ -30,7 +20,6 @@ export const CvModal: React.FC<CvModalProps> = ({ isOpen, onClose }) => {
   };
 
   const handleDownload = () => {
-    // Create a plain text CV blob for download
     const cvText = `
 ===================================================================
 ADHITHYAN DAS - FULL STACK DEVELOPER
@@ -177,6 +166,7 @@ EDUCATION
             <h3 className="text-xs font-bold text-[#38BDF8] uppercase tracking-wider">
               Work Experience
             </h3>
+
             {EXPERIENCE_DATA.map((exp) => (
               <div key={exp.id} className="space-y-1.5">
                 <div className="flex justify-between items-baseline">

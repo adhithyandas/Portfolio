@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { Download, Menu, X, Code2 } from "lucide-react";
+import { Download, Menu, X } from "lucide-react";
 import { NAV_LINKS, PERSONAL_INFO } from "../data/portfolioData";
 import logo from "../../assets/favicon/logo.svg";
 

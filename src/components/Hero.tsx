@@ -1,7 +1,7 @@
 import React from "react";
 import { motion } from "motion/react";
 import { ArrowRight, Github, Linkedin, Mail } from "lucide-react";
-import { PERSONAL_INFO, HERO_STATS, CODE_SNIPPET } from "../data/portfolioData";
+import { PERSONAL_INFO, HERO_STATS } from "../data/portfolioData";
 
 export const Hero: React.FC = () => {
   const handleScrollTo = (id: string) => {
@@ -50,6 +50,7 @@ export const Hero: React.FC = () => {
         }}
         className="absolute top-1/4 left-1/2 w-96 h-96 bg-[#38BDF8]/5 rounded-full blur-3xl pointer-events-none"
       />
+
       <motion.div
         animate={{
           x: [0, -15, 15, 0],
