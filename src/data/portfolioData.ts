@@ -205,15 +205,12 @@ export const PROJECTS_DATA: ProjectItem[] = [
 
 export const SKILL_CATEGORIES: SkillCategory[] = [
   {
-    category: "Languages & Frontend",
-    skills: [
-      "TypeScript",
-      "JavaScript (ES6+)",
-      "React",
-      "Next.js",
-      "HTML5 & CSS3",
-      "Tailwind CSS",
-    ],
+    category: "Languages",
+    skills: ["TypeScript", "JavaScript (ES6+)"],
+  },
+  {
+    category: "Frontend",
+    skills: ["React", "Next.js", "HTML5 & CSS3", "Tailwind CSS"],
   },
   {
     category: "Backend & APIs",

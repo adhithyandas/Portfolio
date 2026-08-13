@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Download, Menu, X, Code2 } from "lucide-react";
 import { NAV_LINKS, PERSONAL_INFO } from "../data/portfolioData";
 import logo from "../../assets/favicon/logo.svg";
@@ -11,10 +11,14 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCvModal }) => {
   const [activeSection, setActiveSection] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const isScrollingRef = useRef(false);
+  const timeoutRef = useRef<NodeJS.Timeout | null>(null);
 
   useEffect(() => {
     const handleScroll = () => {
       setIsScrolled(window.scrollY > 20);
+
+      if (isScrollingRef.current) return;
 
       // Section intersection observer fallback by scroll offset
       const sections = NAV_LINKS.map((link) => link.href.substring(1));
@@ -35,7 +39,10 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCvModal }) => {
     };
 
     window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
   }, []);
 
   const handleNavClick = (
@@ -47,9 +54,16 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCvModal }) => {
     const element = document.getElementById(targetId);
 
     if (element) {
+      isScrollingRef.current = true;
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+
       element.scrollIntoView({ behavior: "smooth" });
       setActiveSection(targetId);
       setMobileMenuOpen(false);
+
+      timeoutRef.current = setTimeout(() => {
+        isScrollingRef.current = false;
+      }, 800);
     }
   };
 

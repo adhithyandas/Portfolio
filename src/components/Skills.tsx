@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react";
 import { SKILL_CATEGORIES } from "../data/portfolioData";
 
 export const Skills: React.FC = () => {
@@ -25,10 +26,34 @@ export const Skills: React.FC = () => {
         </div>
 
         {/* 6-Card 3x2 Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.05,
+              },
+            },
+          }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {SKILL_CATEGORIES.map((category) => (
-            <div
+            <motion.div
               key={category.category}
+              variants={{
+                hidden: { opacity: 0, y: 15 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    duration: 0.45,
+                    ease: "easeOut",
+                  },
+                },
+              }}
               className="bg-[#111827] border border-[#1E293B] rounded-xl p-6 sm:p-7 hover:border-[#38BDF8]/40 transition-all duration-300 shadow-lg flex flex-col justify-between"
             >
               <div>
@@ -50,9 +75,9 @@ export const Skills: React.FC = () => {
                   ))}
                 </ul>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import { motion } from "motion/react";
 import {
   Send,
   Mail,
@@ -52,7 +53,13 @@ export const Contact: React.FC = () => {
 
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-stretch">
           {/* Left: Contact Form */}
-          <div className="lg:col-span-7 bg-[#111827] border border-[#1E293B] rounded-xl p-6 sm:p-8 shadow-xl flex flex-col">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="lg:col-span-7 bg-[#111827] border border-[#1E293B] rounded-xl p-6 sm:p-8 shadow-xl flex flex-col"
+          >
             {submitted ? (
               <div className="p-6 bg-[#0B1120] border border-[#38BDF8]/50 rounded-lg text-center space-y-3">
                 <CheckCircle2 className="w-12 h-12 text-[#38BDF8] mx-auto animate-bounce" />
@@ -176,10 +183,16 @@ export const Contact: React.FC = () => {
                 </button>
               </form>
             )}
-          </div>
+          </motion.div>
 
           {/* Right: Direct Contact Cards */}
-          <div className="lg:col-span-5 bg-[#111827] border border-[#1E293B] rounded-xl p-6 sm:p-8 space-y-6 shadow-xl">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: 0.15, ease: "easeOut" }}
+            className="lg:col-span-5 bg-[#111827] border border-[#1E293B] rounded-xl p-6 sm:p-8 space-y-6 shadow-xl"
+          >
             <h3 className="text-lg font-bold text-[#F8FAFC] border-b border-[#1E293B] pb-4">
               Contact Information
             </h3>
@@ -322,7 +335,7 @@ export const Contact: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

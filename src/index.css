@@ -1,6 +1,14 @@
 @import "tailwindcss";
 
 @layer base {
+  html,
+  body,
+  #root {
+    margin: 0;
+    min-height: 100%;
+    background-color: #0b1120;
+  }
+
   html {
     scroll-behavior: smooth;
     font-family:
@@ -16,9 +24,12 @@
   }
 
   body {
-    background-color: #0b1120;
     color: #f8fafc;
     overflow-x: hidden;
+  }
+
+  section {
+    scroll-margin-top: 30px;
   }
 }
 

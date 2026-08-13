@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react";
 import { EXPERIENCE_DATA } from "../data/portfolioData";
 
 export const Experience: React.FC = () => {
@@ -20,9 +21,36 @@ export const Experience: React.FC = () => {
         </div>
 
         {/* Timeline Container */}
-        <div className="relative pl-6 sm:pl-8 space-y-12 before:content-[''] before:absolute before:left-2 sm:before:left-3 before:top-2 before:bottom-2 before:w-0.5 before:bg-[#1E293B]">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.15,
+              },
+            },
+          }}
+          className="relative pl-6 sm:pl-8 space-y-12 before:content-[''] before:absolute before:left-2 sm:before:left-3 before:top-2 before:bottom-2 before:w-0.5 before:bg-[#1E293B]"
+        >
           {EXPERIENCE_DATA.map((exp) => (
-            <div key={exp.id} className="relative group">
+            <motion.div
+              key={exp.id}
+              variants={{
+                hidden: { opacity: 0, y: 15 },
+                visible: {
+                  opacity: 1,
+                  y: 0,
+                  transition: {
+                    duration: 0.5,
+                    ease: "easeOut",
+                  },
+                },
+              }}
+              className="relative group"
+            >
               {/* Timeline Bullet Node */}
               <div className="absolute -left-5.75 sm:-left-6.75 top-1.5 w-4 h-4 rounded-full bg-[#0B1120] border-2 border-[#38BDF8] group-hover:scale-125 group-hover:bg-[#38BDF8] transition-all duration-300 shadow-[0_0_10px_rgba(56,189,248,0.3)]" />
 
@@ -65,9 +93,9 @@ export const Experience: React.FC = () => {
                   ))}
                 </div>
               </div>
-            </div>
+            </motion.div>
           ))}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

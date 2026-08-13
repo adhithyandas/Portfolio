@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react";
 import { SERVICES_DATA } from "../data/portfolioData";
 
 export const CoreExpertise: React.FC = () => {
@@ -20,13 +21,39 @@ export const CoreExpertise: React.FC = () => {
         </div>
 
         {/* 6 Cards 3x2 Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.05,
+              },
+            },
+          }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
+        >
           {SERVICES_DATA.map((service, index) => {
             const numberStr = String(index + 1).padStart(2, "0");
             return (
-              <div
+              <motion.div
                 key={service.id}
-                className="bg-[#111827] border border-[#1E293B] rounded-xl p-7 min-h-50 hover:border-[#38BDF8]/40 transition-all duration-300 hover:-translate-y-1 shadow-xl group flex flex-col justify-between"
+                variants={{
+                  hidden: { opacity: 0, y: 15 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      duration: 0.45,
+                      ease: "easeOut",
+                    },
+                  },
+                }}
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.2 }}
+                className="bg-[#111827] border border-[#1E293B] rounded-xl p-7 min-h-50 hover:border-[#38BDF8]/40 shadow-xl group flex flex-col justify-between"
               >
                 <div>
                   {/* Number Indicator */}
@@ -44,10 +71,10 @@ export const CoreExpertise: React.FC = () => {
                     {service.description}
                   </p>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );

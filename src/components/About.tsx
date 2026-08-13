@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react";
 import {
   Briefcase,
   GraduationCap,
@@ -25,7 +26,13 @@ export const About: React.FC = () => {
         {/* Two-Column Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:items-center items-start">
           {/* Left Column: Description & Narrative */}
-          <div className="lg:col-span-7 space-y-6">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, ease: "easeOut" }}
+            className="lg:col-span-7 space-y-6"
+          >
             <h2 className="text-3xl sm:text-4xl font-bold tracking-tight text-[#F8FAFC]">
               I build <span className="text-[#38BDF8]">clean, scalable</span>{" "}
               software.
@@ -42,15 +49,15 @@ export const About: React.FC = () => {
                   1.5+ years of professional experience
                 </span>
                 , building modern web applications, backend systems, and
-                scalable software solutions.
+                real-time solutions.
               </p>
 
               <p>
-                My work covers the{" "}
+                My experience spans the{" "}
                 <span className="font-semibold text-[#F8FAFC]">
                   full software development lifecycle
-                </span>
-                , from requirements analysis and application/database design to
+                </span>{" "}
+                — from requirements analysis and application/database design to
                 development, testing, deployment, and maintenance.
               </p>
 
@@ -109,13 +116,22 @@ export const About: React.FC = () => {
                 <span className="text-[#F8FAFC] font-medium">JavaScript</span>,{" "}
                 <span className="text-[#F8FAFC] font-medium">Node.js</span>,{" "}
                 <span className="text-[#F8FAFC] font-medium">Express.js</span>,{" "}
-                <span className="text-[#F8FAFC] font-medium">MongoDB</span>
+                <span className="text-[#F8FAFC] font-medium">MongoDB</span>,{" "}
+                <span className="text-[#F8FAFC] font-medium">Redis</span>,{" "}
+                <span className="text-[#F8FAFC] font-medium">Socket.IO</span>,
+                and <span className="text-[#F8FAFC] font-medium">AWS</span>.
               </p>
             </div>
-          </div>
+          </motion.div>
 
           {/* Right Column: Clean Information Area */}
-          <div className="lg:col-span-5 bg-[#111827] border border-[#1E293B] rounded-xl p-6 sm:p-8 space-y-6 shadow-xl">
+          <motion.div
+            initial={{ opacity: 0, y: 15 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true, margin: "-100px" }}
+            transition={{ duration: 0.5, delay: 0.15, ease: "easeOut" }}
+            className="lg:col-span-5 bg-[#111827] border border-[#1E293B] rounded-xl p-6 sm:p-8 space-y-6 shadow-xl"
+          >
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
               {/* Experience */}
               <div className="flex items-start gap-4">
@@ -207,7 +223,7 @@ export const About: React.FC = () => {
                 </div>
               </div>
             </div>
-          </div>
+          </motion.div>
         </div>
       </div>
     </section>

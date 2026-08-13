@@ -1,4 +1,5 @@
 import React from "react";
+import { motion } from "motion/react";
 import { PROJECTS_DATA } from "../data/portfolioData";
 
 export const FeaturedProjects: React.FC = () => {
@@ -20,7 +21,20 @@ export const FeaturedProjects: React.FC = () => {
         </div>
 
         {/* Project Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8">
+        <motion.div
+          initial="hidden"
+          whileInView="visible"
+          viewport={{ once: true, margin: "-100px" }}
+          variants={{
+            hidden: {},
+            visible: {
+              transition: {
+                staggerChildren: 0.06,
+              },
+            },
+          }}
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-8"
+        >
           {PROJECTS_DATA.map((project, index) => {
             const numberStr = String(index + 1).padStart(2, "0");
 
@@ -33,12 +47,25 @@ export const FeaturedProjects: React.FC = () => {
             }
 
             return (
-              <div
+              <motion.div
                 key={project.id}
-                className={`bg-[#111827] border border-[#1E293B] rounded-xl p-6 sm:p-7 flex flex-col justify-between hover:border-[#38BDF8]/40 transition-all duration-300 hover:-translate-y-1 shadow-xl group ${gridSpanClass}`}
+                variants={{
+                  hidden: { opacity: 0, y: 15 },
+                  visible: {
+                    opacity: 1,
+                    y: 0,
+                    transition: {
+                      duration: 0.5,
+                      ease: "easeOut",
+                    },
+                  },
+                }}
+                whileHover={{ y: -4 }}
+                transition={{ duration: 0.2 }}
+                className={`bg-[#111827] border border-[#1E293B] rounded-xl p-6 sm:p-7 flex flex-col justify-between hover:border-[#38BDF8]/40 shadow-xl group ${gridSpanClass}`}
               >
                 <div>
-                  {/* Category Indicator (Option B) */}
+                  {/* Category Indicator */}
                   <div className="text-xs font-mono text-[#38BDF8] tracking-wider uppercase mb-3 flex items-center gap-1.5">
                     <span>{numberStr}</span>
                     <span className="text-[#38BDF8]/40">·</span>
@@ -69,10 +96,10 @@ export const FeaturedProjects: React.FC = () => {
                     ))}
                   </div>
                 </div>
-              </div>
+              </motion.div>
             );
           })}
-        </div>
+        </motion.div>
       </div>
     </section>
   );
