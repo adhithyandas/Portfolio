@@ -57,18 +57,18 @@ export const Hero: React.FC = () => {
             </motion.div>
 
             <motion.div variants={itemVariants} className="space-y-1">
-              <h1 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#F8FAFC]">
+              <p className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-[#F8FAFC]">
                 Hi, I'm
-              </h1>
+              </p>
 
-              <h2 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight">
                 <span className="text-[#38BDF8]">
                   {PERSONAL_INFO.name.split(" ")[0]}
                 </span>{" "}
                 <span className="text-[#F8FAFC]">
                   {PERSONAL_INFO.name.split(" ").slice(1).join(" ")}
                 </span>
-              </h2>
+              </h1>
             </motion.div>
 
             <motion.p

@@ -109,7 +109,11 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCvModal }) => {
             id="navbar-logo"
           >
             <div className="w-10 h-10 flex items-center justify-center">
-              <img src={logo} alt="Logo" className="w-10 h-10 object-contain" />
+              <img
+                src={logo}
+                alt="Adhithyan Das K Logo"
+                className="w-10 h-10 object-contain"
+              />
             </div>
 
             <span className="font-semibold text-lg text-[#F8FAFC] tracking-tight group-hover:text-[#38BDF8] transition-colors">

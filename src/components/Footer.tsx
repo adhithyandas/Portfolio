@@ -28,7 +28,7 @@ export const Footer: React.FC = () => {
               <div className="w-10 h-10 flex items-center justify-center">
                 <img
                   src={logo}
-                  alt="Logo"
+                  alt="Adhithyan Das K Logo"
                   className="w-10 h-10 object-contain"
                 />
               </div>
