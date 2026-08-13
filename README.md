@@ -1,60 +1,56 @@
-# Adhithyan Das K — Portfolio
+# Adhithyan Das K — Professional Developer Portfolio
 
-Personal portfolio website of **Adhithyan Das K**, a **Full Stack Developer**, showcasing professional experience, featured projects, technical skills, and development expertise.
+Personal portfolio website of **Adhithyan Das K**, a **Full Stack Developer**, showcasing professional experience, selected projects, technical skills, and software engineering expertise.
 
-## Overview
+---
 
-This portfolio is built with React and TypeScript with a clean, modern developer-focused design.
+## Features
 
-It includes:
+- **Instant Load & Zero FOUC**: Tailored raw critical CSS and `#0B1120` initial rendering to prevent flash of unstyled content.
+- **Polished Animations**: Snappy, subtle viewport scroll reveals and interactive UI state transitions using Framer Motion (`motion/react`).
+- **Precision Navigation**: Fixed-header scroll tracking lock to prevent underline flickering, with viewport offsets tailored for perfect focus.
+- **Printable Resume Viewer**: Full integrated modal view for CV reading, with print (PDF saving) and text downloads.
+- **Production-Ready SEO**: Custom meta tags, canonical URL settings, sitemap generation, index guidelines (`robots.txt`), and JSON-LD structured person schema tags.
 
-- Professional introduction
-- About section
-- Work experience
-- Featured projects
-- Technical skills
-- Services / What I Do
-- Contact section
-- Responsive design
-- CV download / viewer
+---
 
 ## Tech Stack
 
-### Frontend
+### Frontend & Animations
 
-- React
-- TypeScript
-- HTML5
-- CSS3
+- **React 19**
+- **TypeScript**
+- **Tailwind CSS** (v4)
+- **Framer Motion / Motion** (v12)
+- **Lucide Icons**
 
-### Development
+### Development Tooling
 
-- Vite
-- Yarn
-- ESLint / TypeScript tooling
+- **Vite**
+- **Yarn**
+- **ESLint & TypeScript** compilation verification
 
-### Tools
-
-- Git
-- GitHub
-- VS Code
+---
 
 ## Project Structure
 
 ```text
 portfolio/
+├── public/
+│   ├── sitemap.xml
+│   └── robots.txt
 ├── src/
 │   ├── components/
 │   │   ├── About.tsx
 │   │   ├── Contact.tsx
+│   │   ├── CoreExpertise.tsx
 │   │   ├── CvModal.tsx
 │   │   ├── Experience.tsx
 │   │   ├── FeaturedProjects.tsx
 │   │   ├── Footer.tsx
 │   │   ├── Hero.tsx
 │   │   ├── Navbar.tsx
-│   │   ├── Skills.tsx
-│   │   └── WhatDo.tsx
+│   │   └── Skills.tsx
 │   │
 │   ├── data/
 │   │   └── portfolioData.ts
@@ -64,157 +60,75 @@ portfolio/
 │   ├── main.tsx
 │   └── types.ts
 │
-├── .gitignore
 ├── index.html
-├── metadata.json
 ├── package.json
-├── README.md
-├── tsconfig.json
-├── vite.config.ts
-└── yarn.lock
+└── tsconfig.json
 ```
 
-## Sections
+---
 
-### Hero
+## Getting Started
 
-Introduces me as a Full Stack Developer with quick access to projects, contact information, social profiles, and CV.
+### Prerequisites
 
-### About
+- Node.js (v18+)
+- Yarn or npm
 
-Provides a short professional introduction along with relevant background information.
+### Installation
 
-### Experience
+1. Clone the repository:
+   ```bash
+   git clone https://github.com/adhithyandas/Portfolio.git
+   ```
+2. Navigate to the project directory:
+   ```bash
+   cd Portfolio
+   ```
+3. Install dependencies:
+   ```bash
+   yarn install
+   ```
 
-Highlights professional experience, responsibilities, and technologies used throughout my career.
+### Development
 
-### Featured Projects
-
-Showcases selected projects with descriptions and the technologies used to build them.
-
-### Skills
-
-Organizes technical skills into categories such as frontend, backend, databases, cloud, DevOps, testing, and development tools.
-
-### What I Do
-
-Highlights the areas I work in, including:
-
-- Web Development
-- Backend Development
-- Real-time Applications
-- Cloud & DevOps
-
-### Contact
-
-Provides a simple way to get in touch through email and professional social profiles.
-
-## Installation
-
-Clone the repository:
-
-```bash
-git clone <your-repository-url>
-```
-
-Navigate to the project:
-
-```bash
-cd portfolio
-```
-
-Install dependencies:
-
-```bash
-yarn install
-```
-
-Or:
-
-```bash
-npm install
-```
-
-## Development
-
-Start the development server:
+Start the local development server:
 
 ```bash
 yarn dev
 ```
 
-Or:
+The application will run on [http://localhost:3000](http://localhost:3000).
 
-```bash
-npm run dev
-```
+### Production Build
 
-The application will be available at:
+1. Build the production package:
+   ```bash
+   yarn build
+   ```
+2. Preview the production build locally:
+   ```bash
+   yarn preview
+   ```
 
-```text
-http://localhost:5173
-```
+---
 
-## Production Build
+## Customization & Updates
 
-Create a production build:
-
-```bash
-yarn build
-```
-
-Or:
-
-```bash
-npm run build
-```
-
-Preview the production build locally:
-
-```bash
-yarn preview
-```
-
-## Customization
-
-Portfolio content is primarily managed through:
+All static texts, projects list, job timelines, skill groups, and profile settings are decoupled into a single configuration file:
 
 ```text
 src/data/portfolioData.ts
 ```
 
-Update this file to modify information such as:
+Updating this file will automatically populate changes across the Hero stats, About summary cards, Experience timeline nodes, Projects grid, and the CV print modal.
 
-- Personal details
-- Experience
-- Projects
-- Skills
-- Social links
-- Contact information
+---
 
-Reusable UI sections are located inside:
+## Contact & Links
 
-```text
-src/components/
-```
-
-## Deployment
-
-The project can be deployed to modern static hosting platforms such as:
-
-- Vercel
-- Netlify
-- GitHub Pages
-- Cloudflare Pages
-
-## Contact
-
-**Adhithyan Das K**
-Full Stack Developer
-
-- GitHub: [Add GitHub URL]
-- LinkedIn: [Add LinkedIn URL]
-- Email: [Add Professional Email]
+- **LinkedIn**: [adhithyan-das-k](https://www.linkedin.com/in/adhithyan-das-k)
+- **GitHub**: [@adhithyandas](https://github.com/adhithyandas)
+- **Email**: [adhithyandask@gmail.com](mailto:adhithyandask@gmail.com)
 
 ---
 
