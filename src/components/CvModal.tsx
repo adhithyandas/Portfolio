@@ -1,78 +1,12 @@
 import React from "react";
 import { motion } from "motion/react";
-import { X, Download, Printer, Mail, Phone, MapPin } from "lucide-react";
-import {
-  PERSONAL_INFO,
-  EXPERIENCE_DATA,
-  PROJECTS_DATA,
-  SKILL_CATEGORIES,
-} from "../data/portfolioData";
+import { X, Download } from "lucide-react";
 
 interface CvModalProps {
   onClose: () => void;
 }
 
 export const CvModal: React.FC<CvModalProps> = ({ onClose }) => {
-  const handlePrint = () => {
-    window.print();
-  };
-
-  const handleDownload = () => {
-    const cvText = `
-===================================================================
-ADHITHYAN DAS - FULL STACK DEVELOPER
-===================================================================
-Email: ${PERSONAL_INFO.email} | Phone: ${PERSONAL_INFO.phone}
-Location: ${PERSONAL_INFO.location}
-LinkedIn: ${PERSONAL_INFO.linkedinUrl} | GitHub: ${PERSONAL_INFO.githubUrl}
-
-SUMMARY
--------------------------------------------------------------------
-Full Stack Developer with 2+ years of total experience (including 1.5+ years
-professional) building scalable web applications and real-time experiences
-using modern technologies. Focused on clean code and performance.
-
-EXPERIENCE
--------------------------------------------------------------------
-${EXPERIENCE_DATA.map(
-  (exp) => `
-* ${exp.role} @ ${exp.company} (${exp.duration})
-  Highlights:
-  ${exp.highlights.map((h) => `  - ${h}`).join("\n")}
-  Technologies: ${exp.technologies.join(", ")}
-`,
-).join("\n")}
-
-FEATURED PROJECTS
--------------------------------------------------------------------
-${PROJECTS_DATA.map(
-  (p) => `
-* ${p.title}
-  ${p.description}
-  Technologies: ${p.technologies.join(", ")}
-`,
-).join("\n")}
-
-TECHNICAL SKILLS
--------------------------------------------------------------------
-${SKILL_CATEGORIES.map((cat) => `${cat.category}: ${cat.skills.join(", ")}`).join("\n")}
-
-EDUCATION
--------------------------------------------------------------------
-* B.Tech Degree | Kerala, India
-    `.trim();
-
-    const blob = new Blob([cvText], { type: "text/plain" });
-    const url = URL.createObjectURL(blob);
-    const link = document.createElement("a");
-    link.href = url;
-    link.download = "Adhithyan_Das_Resume.txt";
-    document.body.appendChild(link);
-    link.click();
-    document.body.removeChild(link);
-    URL.revokeObjectURL(url);
-  };
-
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -94,27 +28,18 @@ EDUCATION
         <div className="bg-[#0B1120] px-6 py-4 border-b border-[#1E293B] flex items-center justify-between">
           <div className="flex items-center gap-2">
             <span className="w-3 h-3 rounded-full bg-[#38BDF8]" />
-            <h3 className="font-bold text-[#F8FAFC]">
-              Adhithyan_Das_Resume.pdf
-            </h3>
+            <h3 className="font-bold text-[#F8FAFC]">AdhithyanDasK.pdf</h3>
           </div>
 
           <div className="flex items-center gap-2">
-            <button
-              onClick={handleDownload}
+            <a
+              href="/Adhithyan_Das_Resume.pdf"
+              download="Adhithyan_Das_Resume.pdf"
               className="px-3 py-1.5 text-xs font-semibold rounded bg-[#38BDF8] text-[#0B1120] hover:bg-[#0EA5E9] transition-colors flex items-center gap-1.5 cursor-pointer"
             >
               <Download className="w-3.5 h-3.5" />
-              <span>Download TXT</span>
-            </button>
-
-            <button
-              onClick={handlePrint}
-              className="px-3 py-1.5 text-xs font-semibold rounded bg-[#0B1120] text-[#F8FAFC] border border-[#1E293B] hover:border-[#38BDF8] transition-colors flex items-center gap-1.5 cursor-pointer"
-            >
-              <Printer className="w-3.5 h-3.5" />
-              <span>Print / Save PDF</span>
-            </button>
+              <span>Download PDF</span>
+            </a>
 
             <button
               onClick={onClose}
@@ -125,135 +50,385 @@ EDUCATION
           </div>
         </div>
 
-        {/* Modal Body - CV Content */}
-        <div className="p-6 sm:p-8 overflow-y-auto space-y-6 text-[#F8FAFC] font-sans text-sm">
-          {/* Header */}
-          <div className="border-b border-[#1E293B] pb-6 space-y-2">
-            <h1 className="text-2xl font-bold text-[#F8FAFC]">
-              {PERSONAL_INFO.name}
-            </h1>
+        {/* Modal Body - CV Content (A4 Paper Style) */}
+        <div className="flex-1 overflow-y-auto p-4 sm:p-6 bg-[#0B1120]">
+          <div className="max-w-3xl mx-auto bg-white text-[#111827] shadow-2xl p-8 sm:p-12 rounded-sm border border-gray-200 font-sans leading-normal">
+            {/* Header */}
+            <div className="border-b border-gray-300 pb-3 mb-4">
+              <h1 className="text-2xl font-bold tracking-tight text-[#0F172A] mb-1">
+                Adhithyan Das K
+              </h1>
 
-            <h2 className="text-[#38BDF8] font-semibold">
-              {PERSONAL_INFO.title}
-            </h2>
+              <p className="text-xs font-bold tracking-wider text-gray-500 uppercase mb-2">
+                Full Stack Developer
+              </p>
 
-            <div className="flex flex-wrap gap-4 text-xs text-[#94A3B8] pt-2">
-              <span className="flex items-center gap-1">
-                <Mail className="w-3.5 h-3.5 text-[#38BDF8]" />{" "}
-                {PERSONAL_INFO.email}
-              </span>
-
-              <span className="flex items-center gap-1">
-                <Phone className="w-3.5 h-3.5 text-[#38BDF8]" />{" "}
-                {PERSONAL_INFO.phone}
-              </span>
-
-              <span className="flex items-center gap-1">
-                <MapPin className="w-3.5 h-3.5 text-[#38BDF8]" />{" "}
-                {PERSONAL_INFO.location}
-              </span>
-            </div>
-          </div>
-
-          {/* Profile Summary */}
-          <div className="space-y-2">
-            <h3 className="text-xs font-bold text-[#38BDF8] uppercase tracking-wider">
-              Professional Summary
-            </h3>
-
-            <p className="text-[#94A3B8] leading-relaxed">
-              Full Stack Developer with 2+ years of total experience (including
-              1.5+ years professional) building scalable web applications and
-              real-time experiences using React, Next.js, Node.js, Express,
-              MongoDB, and Redis. Passionate about clean code, performance
-              optimization, and AWS cloud infrastructure.
-            </p>
-          </div>
-
-          {/* Experience */}
-          <div className="space-y-4">
-            <h3 className="text-xs font-bold text-[#38BDF8] uppercase tracking-wider">
-              Work Experience
-            </h3>
-
-            {EXPERIENCE_DATA.map((exp) => (
-              <div key={exp.id} className="space-y-1.5">
-                <div className="flex justify-between items-baseline">
-                  <div className="font-bold text-[#F8FAFC]">
-                    {exp.role} —{" "}
-                    <span className="text-[#38BDF8]">{exp.company}</span>
-                  </div>
-
-                  <div className="text-xs text-[#94A3B8] font-mono">
-                    {exp.duration}
-                  </div>
-                </div>
-
-                <ul className="list-disc list-inside text-xs text-[#94A3B8] space-y-1 pl-1">
-                  {exp.highlights.map((h, i) => (
-                    <li key={i}>{h}</li>
-                  ))}
-                </ul>
-              </div>
-            ))}
-          </div>
-
-          {/* Featured Projects */}
-          <div className="space-y-3">
-            <h3 className="text-xs font-bold text-[#38BDF8] uppercase tracking-wider">
-              Featured Projects
-            </h3>
-
-            <div className="grid grid-cols-1 gap-3">
-              {PROJECTS_DATA.map((proj) => (
-                <div
-                  key={proj.id}
-                  className="bg-[#0B1120] p-3 rounded border border-[#1E293B]"
+              <div className="flex flex-wrap gap-x-2 gap-y-1 text-[11px] text-gray-600">
+                <a
+                  href="mailto:adhithyandask@gmail.com"
+                  className="hover:text-[#38BDF8] hover:underline"
                 >
-                  <div className="font-bold text-xs text-[#F8FAFC]">
-                    {proj.title}
+                  adhithyandask@gmail.com
+                </a>
+
+                <span>|</span>
+
+                <span>+91 7306291434</span>
+
+                <span>|</span>
+
+                <span>Malappuram, Kerala, India</span>
+
+                <span>|</span>
+                <a
+                  href="https://linkedin.com/in/adhithyan-das-k"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#38BDF8] underline"
+                >
+                  LinkedIn
+                </a>
+
+                <span>|</span>
+
+                <a
+                  href="https://adhithyandask.vercel.app"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="hover:text-[#38BDF8] underline"
+                >
+                  Portfolio
+                </a>
+              </div>
+            </div>
+
+            {/* Professional Summary */}
+            <div className="mb-5">
+              <h2 className="text-xs font-bold text-gray-800 uppercase tracking-wider border-b border-gray-200 pb-1 mb-2">
+                Professional Summary
+              </h2>
+
+              <p className="text-xs leading-relaxed text-gray-700">
+                Full Stack Developer with{" "}
+                <strong className="font-semibold text-black">
+                  2+ years of development experience
+                </strong>
+                , including{" "}
+                <strong className="font-semibold text-black">
+                  1.5 years professional experience
+                </strong>
+                , building scalable web applications, backend services, APIs,
+                real-time systems and cloud solutions. Experienced in{" "}
+                <strong className="font-semibold text-black">
+                  application and database design, testing, deployment, and
+                  maintenance
+                </strong>
+                , with focus on{" "}
+                <strong className="font-semibold text-black">
+                  clean architecture, performance, security and maintainability
+                </strong>
+                .
+              </p>
+            </div>
+
+            {/* Skills */}
+            <div className="mb-5">
+              <h2 className="text-xs font-bold text-gray-800 uppercase tracking-wider border-b border-gray-200 pb-1 mb-2">
+                Skills
+              </h2>
+
+              <div className="space-y-1.5 text-xs text-gray-700">
+                <div>
+                  <strong className="font-semibold text-black">
+                    Languages:
+                  </strong>{" "}
+                  TypeScript, JavaScript (ES6+)
+                </div>
+
+                <div>
+                  <strong className="font-semibold text-black">
+                    Frontend Development:
+                  </strong>{" "}
+                  React, Next.js, HTML5, CSS3, Tailwind CSS
+                </div>
+
+                <div>
+                  <strong className="font-semibold text-black">
+                    Backend & APIs:
+                  </strong>{" "}
+                  Node.js, Express.js, REST APIs, Socket.io, JWT, RBAC,
+                  Firebase, Third-Party Integrations
+                </div>
+
+                <div>
+                  <strong className="font-semibold text-black">
+                    Database & Caching:
+                  </strong>{" "}
+                  MongoDB, Mongoose, Redis, Firestore
+                </div>
+
+                <div>
+                  <strong className="font-semibold text-black">
+                    Cloud & DevOps:
+                  </strong>{" "}
+                  AWS (S3, Lambda, EventBridge, IAM), Docker (Basic), CI/CD,
+                  Vercel
+                </div>
+
+                <div>
+                  <strong className="font-semibold text-black">
+                    Testing & Monitoring:
+                  </strong>{" "}
+                  Vitest, React Testing Library, Sentry
+                </div>
+
+                <div>
+                  <strong className="font-semibold text-black">
+                    Tools & Engineering:
+                  </strong>{" "}
+                  Git, GitHub, Postman, Swagger / OpenAPI, System Design (Basic)
+                </div>
+              </div>
+            </div>
+
+            {/* Professional Experience */}
+            <div className="mb-5">
+              <h2 className="text-xs font-bold text-gray-800 uppercase tracking-wider border-b border-gray-200 pb-1 mb-2.5">
+                Professional Experience
+              </h2>
+
+              <div className="space-y-4">
+                {/* Job 1 */}
+                <div>
+                  <div className="flex justify-between items-baseline mb-1">
+                    <div className="text-xs text-gray-800">
+                      <strong className="font-bold text-black text-xs">
+                        MERN Stack Developer
+                      </strong>
+                      , <span className="text-gray-700">Elance Learning</span>
+                    </div>
+
+                    <span className="text-[10px] text-gray-500 font-medium">
+                      Jan 2025 - Jun 2026
+                    </span>
                   </div>
 
-                  <p className="text-xs text-[#94A3B8] mt-1">
-                    {proj.description}
-                  </p>
+                  <ul className="list-disc pl-4 space-y-1 text-xs text-gray-700">
+                    <li>
+                      Developed and maintained production web applications,
+                      admin platforms, and backend services
+                    </li>
 
-                  <div className="text-[11px] font-mono text-[#38BDF8] mt-1">
-                    Tech: {proj.technologies.join(", ")}
+                    <li>
+                      Built and maintained admin and faculty platforms
+                      end-to-end, covering content management, course
+                      structures, media, materials, live sessions, and related
+                      workflows
+                    </li>
+
+                    <li>
+                      Implemented cloud deployments and CI/CD workflows using{" "}
+                      <strong className="font-semibold text-black">AWS</strong>{" "}
+                      and{" "}
+                      <strong className="font-semibold text-black">
+                        GitHub Actions
+                      </strong>
+                    </li>
+
+                    <li>
+                      Collaborated with senior engineers and QA on code reviews,
+                      testing, debugging, and production releases
+                    </li>
+
+                    <li>
+                      Worked in an{" "}
+                      <strong className="font-semibold text-black">
+                        Agile/Scrum
+                      </strong>{" "}
+                      environment using{" "}
+                      <strong className="font-semibold text-black">Jira</strong>
+                    </li>
+                  </ul>
+                </div>
+
+                {/* Job 2 */}
+                <div>
+                  <div className="flex justify-between items-baseline mb-1">
+                    <div className="text-xs text-gray-800">
+                      <strong className="font-bold text-black text-xs">
+                        MERN Stack Developer Intern
+                      </strong>
+                      , <span className="text-gray-700">Luminar Technolab</span>
+                    </div>
+
+                    <span className="text-[10px] text-gray-500 font-medium">
+                      Apr 2024 - Dec 2024
+                    </span>
                   </div>
+
+                  <ul className="list-disc pl-4 space-y-1 text-xs text-gray-700">
+                    <li>
+                      Developed full-stack web applications using{" "}
+                      <strong className="font-semibold text-black">
+                        React, Node.js, Express.js, and MongoDB
+                      </strong>
+                    </li>
+
+                    <li>
+                      Developed a real-time chat application with{" "}
+                      <strong className="font-semibold text-black">
+                        authentication, authorization
+                      </strong>
+                      , profile management, image uploads, search, and protected
+                      routes
+                    </li>
+
+                    <li>
+                      Developed and integrated{" "}
+                      <strong className="font-semibold text-black">
+                        REST APIs
+                      </strong>
+                      , database operations, file uploads, and frontend-backend
+                      communication
+                    </li>
+
+                    <li>
+                      Contributed to debugging, feature development, code
+                      improvements, and application testing
+                    </li>
+                  </ul>
                 </div>
-              ))}
+              </div>
             </div>
-          </div>
 
-          {/* Skills */}
-          <div className="space-y-2">
-            <h3 className="text-xs font-bold text-[#38BDF8] uppercase tracking-wider">
-              Technical Skills
-            </h3>
+            {/* Projects */}
+            <div className="mb-5">
+              <h2 className="text-xs font-bold text-gray-800 uppercase tracking-wider border-b border-gray-200 pb-1 mb-2.5">
+                Projects
+              </h2>
 
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 text-xs text-[#94A3B8]">
-              {SKILL_CATEGORIES.map((cat) => (
-                <div key={cat.category}>
-                  <span className="font-semibold text-[#F8FAFC]">
-                    {cat.category}:{" "}
-                  </span>
+              <div className="space-y-4">
+                {/* Project 1 */}
+                <div>
+                  <div className="mb-1 text-xs text-gray-800">
+                    <strong className="font-bold text-black">
+                      Elant Learning
+                    </strong>{" "}
+                    <span className="text-gray-500">
+                      — React, Next.js, TypeScript, Node.js, Express.js,
+                      MongoDB, Redis, Socket.io, AWS
+                    </span>
+                  </div>
 
-                  {cat.skills.join(", ")}
+                  <ul className="list-disc pl-4 space-y-1 text-xs text-gray-700">
+                    <li>
+                      Built and maintained an{" "}
+                      <strong className="font-semibold text-black">
+                        AI-driven learning platform
+                      </strong>{" "}
+                      supporting structured courses, video classes, study
+                      materials, live sessions, exams, forums, challenges, and
+                      real-time communication
+                    </li>
+
+                    <li>
+                      Developed and maintained{" "}
+                      <strong className="font-semibold text-black">
+                        admin and faculty platforms
+                      </strong>{" "}
+                      for managing programs, batches, faculties, chapters,
+                      topics, videos, materials, and live sessions
+                    </li>
+
+                    <li>
+                      Contributed to backend services for chat, live sessions,
+                      videos, materials, profiles, and global ranking, with
+                      real-time communication using{" "}
+                      <strong className="font-semibold text-black">
+                        Socket.io
+                      </strong>{" "}
+                      and{" "}
+                      <strong className="font-semibold text-black">
+                        Redis
+                      </strong>
+                    </li>
+
+                    <li>
+                      Worked with{" "}
+                      <strong className="font-semibold text-black">
+                        cloud deployment, CI/CD
+                      </strong>
+                      , third-party integrations, and production application
+                      workflows
+                    </li>
+                  </ul>
                 </div>
-              ))}
+
+                {/* Project 2 */}
+                <div>
+                  <div className="mb-1 text-xs text-gray-800">
+                    <strong className="font-bold text-black">
+                      Elance Learning Management System (LMS)
+                    </strong>{" "}
+                    <span className="text-gray-500">
+                      — Next.js, Node.js, Express.js, MongoDB, AWS, Vercel
+                    </span>
+                  </div>
+
+                  <ul className="list-disc pl-4 space-y-1 text-xs text-gray-700">
+                    <li>
+                      Built the{" "}
+                      <strong className="font-semibold text-black">
+                        web application end-to-end
+                      </strong>{" "}
+                      for professional finance learning programs
+                    </li>
+
+                    <li>
+                      Developed structured content management for programs,
+                      batches, chapters, topics, videos, announcements, and
+                      study materials
+                    </li>
+
+                    <li>
+                      Implemented faculty content workflows for video classes
+                      and learning materials
+                    </li>
+
+                    <li>
+                      Integrated{" "}
+                      <strong className="font-semibold text-black">
+                        video streaming
+                      </strong>{" "}
+                      and{" "}
+                      <strong className="font-semibold text-black">
+                        cloud storage
+                      </strong>{" "}
+                      services for course content delivery
+                    </li>
+                  </ul>
+                </div>
+              </div>
             </div>
-          </div>
 
-          {/* Education */}
-          <div className="space-y-1 pt-2 border-t border-[#1E293B]">
-            <h3 className="text-xs font-bold text-[#38BDF8] uppercase tracking-wider">
-              Education
-            </h3>
+            {/* Education */}
+            <div>
+              <h2 className="text-xs font-bold text-gray-800 uppercase tracking-wider border-b border-gray-200 pb-1 mb-2">
+                Education
+              </h2>
 
-            <div className="flex justify-between text-xs">
-              <span className="font-bold text-[#F8FAFC]">B.Tech Degree</span>
-              <span className="text-[#94A3B8]">Kerala, India</span>
+              <div className="flex justify-between items-baseline text-xs text-gray-800">
+                <div>
+                  <strong className="font-bold text-black">
+                    Bachelor of Computer Applications (BCA)
+                  </strong>
+                  , <span className="text-gray-700">Yenepoya University</span>
+                </div>
+
+                <span className="text-[10px] text-gray-500 font-medium font-sans">
+                  Nov 2021 - Apr 2024 | Mangalore, Karnataka
+                </span>
+              </div>
             </div>
           </div>
         </div>
