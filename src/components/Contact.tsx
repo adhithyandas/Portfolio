@@ -61,13 +61,13 @@ export const Contact: React.FC = () => {
             className="lg:col-span-7 bg-[#111827] border border-[#1E293B] rounded-xl p-6 sm:p-8 shadow-xl flex flex-col"
           >
             {submitted ? (
-              <div className="p-6 bg-[#0B1120] border border-[#38BDF8]/50 rounded-lg text-center space-y-3">
-                <CheckCircle2 className="w-12 h-12 text-[#38BDF8] mx-auto animate-bounce" />
-                <h3 className="text-lg font-bold text-[#F8FAFC]">
+              <div className="flex-1 flex flex-col items-center justify-center py-12 px-6 text-center space-y-4">
+                <CheckCircle2 className="w-16 h-16 text-[#38BDF8] animate-bounce" />
+                <h3 className="text-2xl font-bold text-[#F8FAFC]">
                   Message Sent Successfully!
                 </h3>
 
-                <p className="text-sm text-[#94A3B8]">
+                <p className="text-[#94A3B8] text-sm sm:text-base max-w-md">
                   Thank you for reaching out, Adhithyan will get back to you
                   shortly.
                 </p>
@@ -263,7 +263,7 @@ export const Contact: React.FC = () => {
                   </div>
 
                   <div className="text-sm font-semibold text-[#F8FAFC] group-hover:text-[#38BDF8] transition-colors">
-                    linkedin.com/in/adhithyan-das
+                    linkedin.com/in/adhithyandask
                   </div>
                 </div>
               </a>

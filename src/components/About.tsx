@@ -48,38 +48,35 @@ export const About: React.FC = () => {
                 <span className="font-semibold text-[#F8FAFC]">
                   1.5+ years of professional experience
                 </span>
-                , building modern web applications, backend systems, and
-                real-time solutions.
+                , building web applications, backend services, and real-time
+                systems.
               </p>
 
               <p>
                 My experience spans the{" "}
                 <span className="font-semibold text-[#F8FAFC]">
                   full software development lifecycle
-                </span>{" "}
-                — from requirements analysis and application/database design to
-                development, testing, deployment, and maintenance.
+                </span>
+                , from requirements analysis and application and database design
+                to development, testing, deployment, and maintenance.
               </p>
 
               <p>
                 I build across frontend and backend systems, including
                 responsive interfaces,{" "}
-                <span className="font-semibold text-[#F8FAFC]">
-                  scalable APIs
-                </span>
-                , database-driven applications, authentication and
-                authorization,{" "}
+                <span className="font-semibold text-[#F8FAFC]">REST APIs</span>,
+                database-driven applications, authentication and authorization,{" "}
                 <span className="font-semibold text-[#F8FAFC]">
                   real-time communication
                 </span>
-                , and third-party integrations.
+                , and third party integrations.
               </p>
 
               <p>
                 I've contributed to education platforms, academic applications,
                 content management systems, job platforms, and other business
-                applications, working across both application development and
-                backend infrastructure.
+                applications, working across application development, backend
+                services, and cloud environments.
               </p>
 
               <p>
@@ -116,10 +113,8 @@ export const About: React.FC = () => {
                 <span className="text-[#F8FAFC] font-medium">JavaScript</span>,{" "}
                 <span className="text-[#F8FAFC] font-medium">Node.js</span>,{" "}
                 <span className="text-[#F8FAFC] font-medium">Express.js</span>,{" "}
-                <span className="text-[#F8FAFC] font-medium">MongoDB</span>,{" "}
-                <span className="text-[#F8FAFC] font-medium">Redis</span>,{" "}
-                <span className="text-[#F8FAFC] font-medium">Socket.IO</span>,
-                and <span className="text-[#F8FAFC] font-medium">AWS</span>.
+                <span className="text-[#F8FAFC] font-medium">MongoDB</span>, and{" "}
+                <span className="text-[#F8FAFC] font-medium">AWS</span>.
               </p>
             </div>
           </motion.div>
@@ -146,9 +141,6 @@ export const About: React.FC = () => {
 
                   <div className="text-sm sm:text-base font-semibold text-[#F8FAFC] mt-0.5">
                     {PERSONAL_INFO.experienceYears}
-                  </div>
-                  <div className="text-xs text-[#94A3B8] mt-0.5">
-                    {PERSONAL_INFO.experienceProfessional}
                   </div>
                 </div>
               </div>

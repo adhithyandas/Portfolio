@@ -12,7 +12,7 @@ export const PERSONAL_INFO = {
   title: "Full Stack Developer",
   eyebrow: "FULL STACK DEVELOPER",
   heroDescription:
-    "I build scalable web applications and reliable backend systems for modern digital products. I work across the stack to turn requirements into production-ready software, with a focus on clean architecture, performance, security, and maintainability.",
+    "Building scalable web applications and reliable backend systems for digital products. Turning requirements into production ready software with a focus on clean architecture, performance, security, and maintainability.",
   aboutHeading: "I build clean, scalable software.",
   aboutParagraph1:
     "I'm a Full Stack Developer with 2+ years of total development experience, including 1.5+ years of professional experience building web applications, backend systems, and real-time solutions.",
@@ -23,10 +23,10 @@ export const PERSONAL_INFO = {
   location: "Kerala, India",
   languages: "English, Malayalam",
   degree: "BCA",
-  experienceYears: "2+ Years Total",
+  experienceYears: "2+ Years",
   experienceProfessional: "1.5+ Years Professional",
   githubUrl: "https://github.com/adhithyandas",
-  linkedinUrl: "https://www.linkedin.com/in/adhithyan-das-k",
+  linkedinUrl: "https://www.linkedin.com/in/adhithyandask",
   xUrl: "https://x.com/adhithyandask",
   whatsappUrl: "https://wa.me/917306291434",
 };
@@ -76,12 +76,12 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     company: "Elance Learning",
     duration: "Jan 2025 – Jun 2026",
     highlights: [
-      "Developed and maintained multiple production web applications and backend services.",
-      "Built and maintained admin and faculty platforms end-to-end.",
-      "Developed APIs, database models, authentication, real-time functionality, and third-party integrations.",
-      "Contributed across the full software development lifecycle, including requirements analysis, application and database design, development, testing, deployment, and maintenance.",
-      "Collaborated with senior engineers and QA on code reviews, PRs, testing, debugging, and releases.",
-      "Worked in an Agile/Scrum environment using Jira.",
+      "Developed and maintained production web applications, admin platforms, and backend services.",
+      "Built end-to-end features covering APIs, database models, authentication, real-time functionality, third-party integrations, and cloud-based workflows.",
+      "Worked across requirements analysis, application and database design, development, testing, deployment, and maintenance.",
+      "Implemented cloud deployments and CI/CD workflows using AWS and GitHub Actions.",
+      "Collaborated with senior engineers and QA on code reviews, testing, debugging, and production releases.",
+      "Worked in an Agile/Scrum environment using Jira for task management and development workflows.",
     ],
     technologies: [
       "React",
@@ -116,11 +116,11 @@ export const EXPERIENCE_DATA: ExperienceItem[] = [
     duration: "Apr 2024 – Dec 2024",
     highlights: [
       "Developed full-stack web applications using React, Node.js, Express.js, and MongoDB.",
-      "Built a real-time chat application with authentication and authorization, real-time messaging, profile management, image uploads, search, and protected routes.",
-      "Developed a Project Management System with authentication, authorization, project CRUD operations, profile management, protected routes, and theme switching.",
-      "Developed and integrated REST APIs, database operations, file uploads, and frontend-backend communication.",
-      "Built responsive interfaces using React Context API, React Router, Tailwind CSS, and Bootstrap.",
-      "Contributed to debugging, code improvements, feature development, and application testing throughout the development lifecycle.",
+      "Implemented authentication and authorization using JWT and Bcrypt, including protected routes and user access controls.",
+      "Developed REST APIs, database operations, file uploads, and frontend-backend integrations.",
+      "Built real-time communication using Socket.IO, including messaging and profile management functionality.",
+      "Built responsive interfaces using React and Tailwind CSS, with Context API for state management and React Router for navigation.",
+      "Contributed to debugging, feature development, code improvements, and application testing.",
     ],
     technologies: [
       "React",
@@ -143,9 +143,9 @@ export const PROJECTS_DATA: ProjectItem[] = [
   {
     id: "proj-1",
     title: "Elant Learning",
-    category: "AI-DRIVEN Learning Platform",
+    category: "LEARNING PLATFORM",
     description:
-      "AI-driven learning platform for ACCA, CMA, and CA students with structured courses, live sessions, study materials, exams, forums, challenges, and real-time communication.",
+      "Learning platform for ACCA and CMA students with structured courses, live sessions, study materials, exams, forums, challenges, real-time communication, and an AI-powered chatbot.",
     technologies: [
       "React",
       "Next.js",
@@ -159,17 +159,17 @@ export const PROJECTS_DATA: ProjectItem[] = [
   {
     id: "proj-2",
     title: "Elance Connect",
-    category: "Academic Platform",
+    category: "ACADEMIC PLATFORM",
     description:
       "Academic management and communication platform for students and parents, covering schedules, exams, mentor bookings, batch enrollment, progress tracking, and announcements.",
     technologies: ["Next.js", "Node.js", "Fastify", "MongoDB", "AWS", "Vercel"],
   },
   {
     id: "proj-3",
-    title: "Elance Learning",
-    category: "Learning Platform",
+    title: "Elance Learning Management System (LMS)",
+    category: "LEARNING MANAGEMENT SYSTEM",
     description:
-      "Online learning platform for professional finance programs, providing video courses, study materials, announcements, and structured content management for administrators and faculty.",
+      "Online learning platform for ACCA and CMA programs, providing video courses, study materials, announcements, and structured content management for administrators and faculty.",
     technologies: [
       "Next.js",
       "Node.js",
@@ -182,7 +182,7 @@ export const PROJECTS_DATA: ProjectItem[] = [
   {
     id: "proj-4",
     title: "Elance Job Portal",
-    category: "Job Platform",
+    category: "JOB PORTAL",
     description:
       "Job application platform that enables users to browse available opportunities, view job details, submit applications, and upload resumes through a streamlined recruitment workflow.",
     technologies: [
