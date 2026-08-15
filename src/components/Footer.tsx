@@ -1,7 +1,6 @@
 import React from "react";
 import { Github, Linkedin, Mail } from "lucide-react";
 import { PERSONAL_INFO, NAV_LINKS } from "../data/portfolioData";
-import logo from "../../assets/favicon/logo.svg";
 
 export const Footer: React.FC = () => {
   const currentYear = 2026;
@@ -27,7 +26,7 @@ export const Footer: React.FC = () => {
             <div className="flex items-center gap-3">
               <div className="w-10 h-10 flex items-center justify-center">
                 <img
-                  src={logo}
+                  src="/favicon.svg"
                   alt="Adhithyan Das K Logo"
                   className="w-10 h-10 object-contain"
                 />

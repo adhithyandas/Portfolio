@@ -2,7 +2,6 @@ import React, { useState, useEffect, useRef } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Download, Menu, X } from "lucide-react";
 import { NAV_LINKS, PERSONAL_INFO } from "../data/portfolioData";
-import logo from "../../assets/favicon/logo.svg";
 
 interface NavbarProps {
   onOpenCvModal: () => void;
@@ -110,7 +109,7 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCvModal }) => {
           >
             <div className="w-10 h-10 flex items-center justify-center">
               <img
-                src={logo}
+                src="/favicon.svg"
                 alt="Adhithyan Das K Logo"
                 className="w-10 h-10 object-contain"
               />
