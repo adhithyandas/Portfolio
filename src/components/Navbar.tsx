@@ -3,11 +3,7 @@ import { motion, AnimatePresence } from "motion/react";
 import { Download, Menu, X } from "lucide-react";
 import { NAV_LINKS, PERSONAL_INFO } from "../data/portfolioData";
 
-interface NavbarProps {
-  onOpenCvModal: () => void;
-}
-
-export const Navbar: React.FC<NavbarProps> = ({ onOpenCvModal }) => {
+export const Navbar: React.FC = () => {
   const [activeSection, setActiveSection] = useState("home");
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
@@ -156,26 +152,28 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCvModal }) => {
 
           {/* Download CV Action */}
           <div className="hidden md:flex items-center">
-            <button
-              onClick={onOpenCvModal}
-              id="download-cv-btn"
+            <a
+              href="/AdhithyanDasK.pdf"
+              download="AdhithyanDasK.pdf"
+              id="download-resume-btn"
               className="inline-flex items-center gap-2 px-4 py-2 text-xs lg:text-sm font-medium rounded-md text-[#F8FAFC] bg-[#111827] border border-[#1E293B] hover:border-[#38BDF8] hover:text-[#38BDF8] transition-all duration-300 focus:outline-none focus:ring-2 focus:ring-[#38BDF8]/50 cursor-pointer shadow-sm group"
             >
-              <span>Download CV</span>
+              <span>Download Resume</span>
               <Download className="w-4 h-4 text-[#38BDF8] group-hover:translate-y-0.5 transition-transform" />
-            </button>
+            </a>
           </div>
 
           {/* Mobile menu toggle */}
           <div className="flex md:hidden items-center gap-2">
-            <button
-              onClick={onOpenCvModal}
-              className="p-2 text-xs font-medium rounded-md text-[#38BDF8] bg-[#111827] border border-[#1E293B]"
-              title="Download CV"
-              id="mobile-cv-icon-btn"
+            <a
+              href="/AdhithyanDasK.pdf"
+              download="AdhithyanDasK.pdf"
+              className="p-2 text-xs font-medium rounded-md text-[#38BDF8] bg-[#111827] border border-[#1E293B] flex items-center justify-center"
+              title="Download Resume"
+              id="mobile-resume-icon-btn"
             >
               <Download className="w-4 h-4" />
-            </button>
+            </a>
 
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -232,16 +230,15 @@ export const Navbar: React.FC<NavbarProps> = ({ onOpenCvModal }) => {
             })}
 
             <div className="pt-2">
-              <button
-                onClick={() => {
-                  setMobileMenuOpen(false);
-                  onOpenCvModal();
-                }}
+              <a
+                href="/AdhithyanDasK.pdf"
+                download="AdhithyanDasK.pdf"
+                onClick={() => setMobileMenuOpen(false)}
                 className="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-md text-sm font-medium text-[#F8FAFC] bg-[#111827] border border-[#38BDF8]/50 hover:bg-[#38BDF8] hover:text-[#0B1120] transition-all"
               >
                 <Download className="w-4 h-4 text-[#38BDF8]" />
-                <span>Download CV</span>
-              </button>
+                <span>Download Resume</span>
+              </a>
             </div>
           </motion.div>
         )}
