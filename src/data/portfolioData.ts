@@ -12,7 +12,7 @@ export const PERSONAL_INFO = {
   title: "Full Stack Developer",
   eyebrow: "FULL STACK DEVELOPER",
   heroDescription:
-    "Building scalable web applications and reliable backend systems for digital products. Turning requirements into production ready software with a focus on clean architecture, performance, security, and maintainability.",
+    "Building scalable web applications and reliable backend systems that turn product requirements into production ready software, with a focus on clean architecture, performance, security, and maintainability. Experienced in developing across the frontend, backend, databases, and cloud environments, with a focus on designing well structured systems and delivering reliable software.",
   aboutHeading: "I build clean, scalable software.",
   aboutParagraph1:
     "I'm a Full Stack Developer with 2+ years of total development experience, including 1.5+ years of professional experience building web applications, backend systems, and real-time solutions.",
