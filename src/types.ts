@@ -8,12 +8,20 @@ export interface ExperienceItem {
   technologies: string[];
 }
 
+export interface ProjectLinks {
+  ios?: string;
+  android?: string;
+  web?: string;
+  github?: string;
+}
+
 export interface ProjectItem {
   id: string;
   title: string;
   description: string;
   technologies: string[];
   category?: string;
+  links?: ProjectLinks;
 }
 
 export interface SkillCategory {

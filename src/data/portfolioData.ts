@@ -155,6 +155,11 @@ export const PROJECTS_DATA: ProjectItem[] = [
       "MongoDB",
       "AWS",
     ],
+    links: {
+      ios: "https://apps.apple.com/in/app/elant-learning/id6738056364",
+      android:
+        "https://play.google.com/store/apps/details?id=com.elantlearning.app&hl=en_US",
+    },
   },
   {
     id: "proj-2",
@@ -163,6 +168,12 @@ export const PROJECTS_DATA: ProjectItem[] = [
     description:
       "Academic management and communication platform for students and parents, covering schedules, exams, mentor bookings, batch enrollment, progress tracking, and announcements.",
     technologies: ["Next.js", "Node.js", "Fastify", "MongoDB", "AWS", "Vercel"],
+    links: {
+      ios: "https://apps.apple.com/in/app/elance-connect/id6755678588",
+      android:
+        "https://play.google.com/store/apps/details?id=com.elance.connect&hl=en_US",
+      web: "https://connect.elancelearning.com/login",
+    },
   },
   {
     id: "proj-3",
@@ -178,6 +189,9 @@ export const PROJECTS_DATA: ProjectItem[] = [
       "AWS",
       "TPStream",
     ],
+    links: {
+      web: "https://elance-lms-web.vercel.app/login",
+    },
   },
   {
     id: "proj-4",

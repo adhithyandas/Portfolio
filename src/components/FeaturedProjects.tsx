@@ -1,6 +1,20 @@
 import React from "react";
 import { motion } from "motion/react";
+import { Apple, Globe, ExternalLink } from "lucide-react";
 import { PROJECTS_DATA } from "../data/portfolioData";
+
+const PlayStoreIcon: React.FC<{ className?: string }> = ({
+  className = "w-3.5 h-3.5",
+}) => (
+  <svg
+    className={className}
+    viewBox="0 0 24 24"
+    fill="currentColor"
+    aria-hidden="true"
+  >
+    <path d="M22.018 13.298l-3.919 2.218-3.515-3.492 3.543-3.521 3.891 2.202a1.49 1.49 0 0 1 0 2.593zM1.398.755A1.478 1.478 0 0 0 1 1.838v20.324c0 .414.14.795.398 1.083l.061.053 11.383-11.353V11.8L1.459.702zm12.924 12.285l-2.482-2.482-10.4 10.4c.435.461 1.15.524 1.764.177zm-2.482-3.957l2.482-2.482L3.204.473c-.614-.347-1.329-.284-1.764.177z" />
+  </svg>
+);
 
 export const FeaturedProjects: React.FC = () => {
   return (
@@ -78,9 +92,56 @@ export const FeaturedProjects: React.FC = () => {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-sm text-[#94A3B8] leading-relaxed mb-6">
+                  <p className="text-sm text-[#94A3B8] leading-relaxed mb-5">
                     {project.description}
                   </p>
+
+                  {/* Platform & Live Links */}
+                  {project.links && (
+                    <div className="flex flex-wrap items-center gap-2 mb-6">
+                      {project.links.web && (
+                        <a
+                          href={project.links.web}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${project.title} Web Application`}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[#0B1120] border border-[#1E293B] text-[#CBD5E1] hover:text-[#38BDF8] hover:border-[#38BDF8]/40 hover:bg-[#38BDF8]/10 transition-all duration-200 group/link"
+                        >
+                          <Globe className="w-3.5 h-3.5 text-[#38BDF8]" />
+                          <span>Web</span>
+                          <ExternalLink className="w-3 h-3 opacity-60 group-hover/link:opacity-100 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-all duration-200" />
+                        </a>
+                      )}
+
+                      {project.links.ios && (
+                        <a
+                          href={project.links.ios}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${project.title} iOS App on Apple App Store`}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[#0B1120] border border-[#1E293B] text-[#CBD5E1] hover:text-[#38BDF8] hover:border-[#38BDF8]/40 hover:bg-[#38BDF8]/10 transition-all duration-200 group/link"
+                        >
+                          <Apple className="w-3.5 h-3.5 text-[#38BDF8]" />
+                          <span>iOS</span>
+                          <ExternalLink className="w-3 h-3 opacity-60 group-hover/link:opacity-100 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-all duration-200" />
+                        </a>
+                      )}
+
+                      {project.links.android && (
+                        <a
+                          href={project.links.android}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          aria-label={`${project.title} Android App on Google Play`}
+                          className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-medium bg-[#0B1120] border border-[#1E293B] text-[#CBD5E1] hover:text-[#38BDF8] hover:border-[#38BDF8]/40 hover:bg-[#38BDF8]/10 transition-all duration-200 group/link"
+                        >
+                          <PlayStoreIcon className="w-3.5 h-3.5 text-[#38BDF8]" />
+                          <span>Android</span>
+                          <ExternalLink className="w-3 h-3 opacity-60 group-hover/link:opacity-100 group-hover/link:translate-x-0.5 group-hover/link:-translate-y-0.5 transition-all duration-200" />
+                        </a>
+                      )}
+                    </div>
+                  )}
                 </div>
 
                 {/* Technologies list */}
