@@ -146,7 +146,7 @@ export const Footer: React.FC = () => {
           <div>© {currentYear} Adhithyan Das K. All rights reserved.</div>
 
           <div className="text-xs text-[#94A3B8]/80">
-            Kerala, India • Full Stack Developer
+            Dubai, United Arab Emirates • Full Stack Developer
           </div>
         </div>
       </div>

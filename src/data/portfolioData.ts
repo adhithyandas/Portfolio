@@ -19,16 +19,16 @@ export const PERSONAL_INFO = {
   aboutParagraph2:
     "I work across the full development lifecycle, from application and database design to development, testing, deployment, and maintenance. I'm focused on writing maintainable code, designing reliable systems, and solving complex engineering problems.",
   email: "adhithyandask@gmail.com",
-  phone: "+91 7306291434",
-  location: "Kerala, India",
+  phone: "+971 561898801",
+  location: "Dubai, United Arab Emirates",
   languages: "English, Malayalam",
-  degree: "BCA",
+  degree: "Bachelor of Computer Application",
   experienceYears: "2+ Years",
   experienceProfessional: "1.5+ Years Professional",
   githubUrl: "https://github.com/adhithyandas",
   linkedinUrl: "https://www.linkedin.com/in/adhithyandask",
   xUrl: "https://x.com/adhithyandask",
-  whatsappUrl: "https://wa.me/917306291434",
+  whatsappUrl: "https://wa.me/971561898801",
 };
 
 export const HERO_STATS = [
